@@ -1,0 +1,55 @@
+.card {
+    background-color: #A6774E;
+    color: #FFFEF1;
+    padding: 2rem;
+    width: 90%;
+}
+
+.card-title {
+    font-family: var(--fonte-principal);
+    font-size: 70px;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.card-subtitle {
+    font-family: var(--fonte-principal);
+    font-size: 30px;
+    font-weight: 500;
+
+}
+
+.btn {
+    background-color: var(--manteiga);
+    color: var(--marrom);
+    border: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.btn:hover {
+    background-color: #D9CDBF;
+    color: var(--marrom);
+}
+
+#codigoConvite {
+    background-color: transparent;
+    border: 1px solid var(--manteiga);
+    color: var(--manteiga);
+}
+
+#codigoConvite::placeholder {
+    color: var(--manteiga);
+    font-size: 12px;
+}
+
+.form-label {
+    font-family: var(--fonte-secundaria);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.btn:active {
+    background-color: var(--marrom) !important;
+}
+
