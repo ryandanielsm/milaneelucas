@@ -3,14 +3,13 @@ import './Login.css';
 import '../../../src/index.css';
 import { db } from '../../firebaseConfig';
 import { useState } from "react";
-import { useNavigate } from "react-router-dom"; // 👈 importar o hook
+import { useNavigate } from "react-router-dom";
 import { collection, query, where, getDocs } from "firebase/firestore";
 
 function Login({ onLogin }) {
   const [codigo, setCodigo] = useState("");
   const [erro, setErro] = useState("");
-  const navigate = useNavigate(); // 👈 inicializar o hook
-
+  const navigate = useNavigate();
   async function handleLogin(e) {
     e.preventDefault();
     setErro("");
@@ -30,7 +29,7 @@ function Login({ onLogin }) {
         const usuario = querySnapshot.docs[0].data();
         localStorage.setItem("usuario", JSON.stringify(usuario));
         onLogin(usuario);
-        navigate("/inicio"); // 👈 redireciona corretamente
+        navigate("/inicio");
       }
     } catch (err) {
       console.error("Erro ao verificar código:", err);
@@ -41,12 +40,10 @@ function Login({ onLogin }) {
   return (
     <div className="container">
       <div className="row">
-        {/* Lado esquerdo com logo */}
         <div className="col d-flex justify-content-center align-items-center vh-100">
           <img src={logo} alt="logo" width={300} />
         </div>
 
-        {/* Lado direito com formulário */}
         <div className="col d-flex justify-content-start align-items-center vh-100">
           <div className="card border-0 shadow-sm p-4" style={{ width: "100%", maxWidth: 400 }}>
             <div className="card-body">
@@ -69,7 +66,6 @@ function Login({ onLogin }) {
                     onChange={(e) => setCodigo(e.target.value)}
                   />
 
-                  {/* ✅ precisa ser type="submit" */}
                   <button type="submit" className="btn btn-primary w-100">
                     Acessar
                   </button>
@@ -85,4 +81,4 @@ function Login({ onLogin }) {
   );
 }
 
-export default Login;
+export default Login;

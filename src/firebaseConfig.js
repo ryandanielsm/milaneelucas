@@ -6,12 +6,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Suas configurações do Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyA-EXEMPLO",
-  authDomain: "meu-app.firebaseapp.com",
-  projectId: "meu-app",
-  storageBucket: "meu-app.appspot.com",
-  messagingSenderId: "123456789",
-  appId: "1:123456789:web:abcdef123456"
+  apiKey: "AIzaSyBh3taJyN4toHQaNoUkl2heETANnBhkx_8",
+  authDomain: "milaneelucas-e0638.firebaseapp.com",
+  projectId: "milaneelucas-e0638",
+  storageBucket: "milaneelucas-e0638.firebasestorage.app",
+  messagingSenderId: "50504367793",
+  appId: "1:50504367793:web:5e4b08383012025adb2c90"
 };
 
 // Inicializa o Firebase
