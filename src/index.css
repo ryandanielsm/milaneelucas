@@ -5,3 +5,7 @@
     --verde: #7E8C54;
     --manteiga: #FFFEF1;
 }
+
+body {
+    min-height: 100vh;
+}

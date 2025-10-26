@@ -45,21 +45,21 @@ function Login({ onLogin }) {
         </div>
 
         <div className="col d-flex justify-content-start align-items-center vh-100">
-          <div className="card border-0 shadow-sm p-4" style={{ width: "100%", maxWidth: 400 }}>
-            <div className="card-body">
-              <h5 className="card-title text-center mb-4">Bem-vindo</h5>
-              <h6 className="card-subtitle text-center mb-4 text-muted">
+          <div className="card border-0 shadow-sm p-4" style={{ width: "100%", maxWidth: 500 }}>
+            <div className="card-body m-1">
+              <h5 className="card-title text-center mb-4">Bem Vindo</h5>
+              <h6 className="card-subtitle text-center mb-4">
                 Acesse a página com o código descrito em seu convite
               </h6>
 
               <form onSubmit={handleLogin}>
                 <div className="mb-3">
-                  <label htmlFor="codigoConvite" className="form-label mb-2">
+                  <label htmlFor="codigoConvite" className="form-label mb-3">
                     Código do convite
                   </label>
                   <input
                     type="text"
-                    className="form-control mb-3"
+                    className="form-control mb-4"
                     id="codigoConvite"
                     placeholder="Digite aqui o seu código de convite"
                     value={codigo}

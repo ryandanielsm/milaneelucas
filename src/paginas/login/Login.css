@@ -1,8 +1,8 @@
 .card {
     background-color: #A6774E;
     color: #FFFEF1;
-    padding: 2rem;
-    width: 90%;
+    padding: 2rem !important;
+    width: 90% !important;
 }
 
 .card-title {
@@ -14,8 +14,9 @@
 
 .card-subtitle {
     font-family: var(--fonte-principal);
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 500;
+    color: var(--manteiga);
 
 }
 
@@ -52,4 +53,3 @@
 .btn:active {
     background-color: var(--marrom) !important;
 }
-

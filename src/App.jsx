@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './paginas/login/Login';
 import Inicio from './paginas/inicio/Inicio';
+import Footer from './componentes/footer/Footer';
 
 function App() {
   const [usuario, setUsuario] = useState(null);
@@ -23,6 +24,7 @@ function App() {
 
         <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
+      <Footer></Footer>
     </BrowserRouter>
   );
 }
