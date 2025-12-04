@@ -4,6 +4,12 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './paginas/login/Login';
 import Inicio from './paginas/inicio/Inicio';
 import Footer from './componentes/footer/Footer';
+import Cerimonia from './paginas/cerimonia/Cerimonia';
+import Confirmar from './paginas/confirmar-presenca/Confirmar';
+import Presente from './paginas/lista-presente/Presente';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
+
 
 function App() {
   const [usuario, setUsuario] = useState(null);
@@ -14,17 +20,31 @@ function App() {
   };
 
   return (
+
+    
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Navigate to="/login" />} />
+      <div className="app-wrapper">
+        <div className="app-content">
+          <Routes>
+            <Route path="/" element={<Navigate to="/login" />} />
 
-        <Route path="/login" element={<Login onLogin={handleLogin} />} />
+            <Route path="/login" element={<Login onLogin={handleLogin} />} />
 
-        <Route path="/inicio" element={usuario ? <Inicio /> : <Navigate to="/login" />} />
+            <Route path="/inicio" element={<Inicio />} />
 
-        <Route path="*" element={<Navigate to="/login" />} />
-      </Routes>
-      <Footer></Footer>
+            <Route path="/cerimonia" element={<Cerimonia />} />
+
+            <Route path="/confirmar-presenca" element={<Confirmar />} />
+
+            <Route path="/lista-presente" element={<Presente />} />
+
+            <Route path="*" element={<Navigate to="/login" />} />
+          </Routes>
+        </div>
+        <Footer></Footer>
+      </div>
+
+
     </BrowserRouter>
   );
 }

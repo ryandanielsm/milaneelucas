@@ -1,0 +1,158 @@
+.cerimonia {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+
+}
+
+.cerimonia h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--fonte-principal);
+    color: var(--verde);
+    font-style: italic;
+    font-size: 80px;
+    font-weight: 900 !important;
+    letter-spacing: 5px;
+
+
+}
+
+.cerimonia img {
+    height: auto;
+}
+
+.cerimonia h1 {
+    font-size: 48px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.local {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.local h2 {
+    font-family: var(--fonte-principal);
+    color: var(--manteiga);
+    font-style: italic;
+    font-size: 40px;
+    font-weight: 100;
+    padding-top: 10px;
+}
+
+.local p {
+    font-family: var(--fonte-secundaria);
+    color: var(--manteiga);
+    font-size: 15px;
+    letter-spacing: 3px;
+}
+
+.mapa {
+    border-radius: 20px;
+
+}
+
+#endereco {
+    background-color: var(--marrom);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 30px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.paragrafo-local {
+    color: var(--marrom);
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 400;
+
+
+}
+
+.mapa-container {
+    display: flex;
+    justify-content: center;
+    /* centraliza horizontalmente */
+    width: 100%;
+}
+
+.mapa {
+    width: 100%;
+    max-width: 1000px;
+    /* largura máxima no desktop */
+    height: 600px;
+    /* altura fixa no desktop */
+    position: relative;
+    border-radius: 20px;
+}
+
+.mapa-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 20px;
+}
+
+@media (max-width: 480px) {
+    .cerimonia h1 {
+        font-size: 40px;
+    }
+
+    .cerimonia img {
+        width: 70px;
+        letter-spacing: 1px;
+
+    }
+
+    .cerimonia {
+        margin-top: 90px;
+    }
+
+    .local img {
+        width: 367px;
+    }
+
+    #endereco h2 {
+        font-size: 25px;
+    }
+
+    #endereco p {
+        font-size: 6px;
+        letter-spacing: 2px;
+    }
+
+    #endereco {
+        padding: 0 10px;
+    }
+
+    .paragrafo-local {
+        font-size: 12px;
+        padding: 0 20px;
+        max-width: 80%;
+        /* evita que o texto fique muito estreito */
+        margin: 0 auto;
+        /* centraliza horizontalmente */
+        text-align: center;
+        line-height: 1.4;
+    }
+
+        .mapa {
+            height: 300px;
+            /* altura menor no mobile */
+            max-width: 95%;
+            /* ocupa toda a tela */
+        }
+      
+}

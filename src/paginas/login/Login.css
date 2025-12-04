@@ -1,7 +1,7 @@
 .card {
     background-color: #A6774E;
     color: #FFFEF1;
-    padding: 2rem !important;
+    /* padding: 2rem !important; */
     width: 90% !important;
 }
 
@@ -13,9 +13,9 @@
 }
 
 .card-subtitle {
-    font-family: var(--fonte-principal);
-    font-size: 25px;
-    font-weight: 500;
+    font-family: var(--fonte-secundaria);
+    font-size: 19px;
+    font-weight: 100;
     color: var(--manteiga);
 
 }
@@ -25,11 +25,16 @@
     color: var(--marrom);
     border: none;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .btn:hover {
     background-color: #D9CDBF;
+    /* tom mais escuro da cor original */
+    box-shadow: 0 6px 15px rgba(217, 205, 191, 0.6);
+    /* sombra suave na cor do fundo */
+    transform: translateY(-3px);
+    /* levanta um pouquinho */
     color: var(--marrom);
 }
 
@@ -50,6 +55,59 @@
     font-size: 14px;
 }
 
-.btn:active {
-    background-color: var(--marrom) !important;
+
+.container-fluid {
+    margin: 0;
+}
+
+.row {
+    margin-top: 0 !important;
+}
+
+.label-text {
+    font-family: var(--fonte-secundaria);
+    font-weight: 400;
+    font-size: 15px;
+    padding-top: 20px;
+}
+
+#codigoConvite::placeholder{
+    font-size: 15px;
+    font-weight: 100;
+    font-style: italic;
+}
+
+@media (max-width: 480px) {
+    #monograma-mobile {
+        width: 170px;
+    }
+
+    #monograma-espacamento {
+        min-height: 0;
+    }
+
+    #card-bemvindo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-title {
+        font-size: 50px;
+    }
+
+    .card-subtitle {
+        font-size: 17px;
+    }
+
+    .label-text {
+        font-size: 15px;
+    }
+
+    #codigoConvite {
+        font-size: 15px;
+    }
+
+    
+
 }

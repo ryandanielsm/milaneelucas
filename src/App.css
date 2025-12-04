@@ -1,4 +1,18 @@
-body {
+html,
+body,
+#root {
     background-color: #FFFEF1;
+    height: 100%;
+    margin: 0;
+}
+
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-content {
+  flex: 1; 
 }
 

@@ -1,0 +1,146 @@
+.confirmar {
+    margin-top: 150px;
+    font-family: var(--fonte-principal);
+    color: var(--verde);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 60px;
+    margin-bottom: 150px;
+    letter-spacing: 3px;
+
+}
+
+.row {
+    margin-top: 150px;
+}
+
+#fundo-form {
+    background-color: var(--marrom);
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.textos-1 h2 {
+    font-family: var(--fonte-principal);
+    color: var(--marrom);
+    font-style: italic;
+    font-weight: 600;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 40px;
+}
+
+.textos-1 p {
+    font-family: var(--fonte-secundaria);
+    color: var(--marrom);
+    font-style: italic;
+    font-weight: 500;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 18px;
+}
+
+.confirme-aqui {
+    font-family: var(--fonte-principal);
+    color: var(--manteiga);
+    font-style: italic;
+    font-size: 50px;
+}
+
+.botao {
+    font-weight: 500;
+    font-family: var(--fonte-secundaria);
+    font-size: 20px;
+    color: var(--manteiga);
+    background-color: var(--verde);
+    border: none;
+    padding: .5rem 1rem;
+    transition: all 0.15s ease;
+}
+
+/* Hover — levanta um pouco */
+.botao:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Active — efeito de clique bonito */
+.botao:active {
+    transform: scale(0.97) translateY(0px);
+    box-shadow: none;
+}
+
+/* Impedir que Bootstrap mude a cor */
+.botao,
+.botao:hover,
+.botao:active,
+.botao:focus {
+    background-color: var(--manteiga);
+    color: var(--marrom);
+    border-color: var(--manteiga);
+}
+
+.input-pequeno {
+    width: 450px;
+    max-width: 100%;
+    display: inline-block;
+    background-color: var(--manteiga);
+}
+
+.input-pequeno::placeholder {
+    color: var(--marrom);
+
+}
+
+.lista .list-group-item {
+    background-color: transparent;
+    border-bottom: 1px solid var(--manteiga);
+    color: var(--manteiga);
+    border: none;
+}
+
+.coluna {
+    margin-bottom: 200px;
+}
+
+@media (max-width: 480px) {
+
+    .confirmar {
+        margin-top: 90px;
+        font-size: 34px;
+        margin-bottom: 30px;
+        letter-spacing: 1px;
+        font-weight: 800;
+
+    }
+
+    .textos-1 h2 {
+        font-weight: 700;
+        font-size: 22px;
+        margin-bottom: 30px;
+
+    }
+
+    .textos-1 p {
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+    #fundo-form {
+        padding: 30px;
+    }
+
+    .confirme-aqui {
+        font-size: 40px;
+    }
+
+    .botao {
+        font-size: 16px;
+    }
+
+    .coluna {
+        margin-bottom: 80px;
+    }
+}

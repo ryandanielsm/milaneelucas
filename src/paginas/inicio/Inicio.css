@@ -1,0 +1,188 @@
+.carousel.slide {
+  width: 600px !important;
+  height: 400px !important;
+}
+
+.carousel img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0 10px 0;
+}
+
+.video-container video {
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.contagem {
+  background-color: var(--marrom);
+  background-image: url('../../assets/fundo-floral.png');
+  /* background-repeat: repeat; */
+  background-position: center;
+  background-size: contain;
+  height: 450px;
+}
+
+.contagem h1 {
+  color: var(--manteiga);
+  font-family: var(--fonte-principal);
+  font-style: italic;
+  font-size: 60px;
+  font-weight: 500;
+  margin-bottom: 0;
+
+}
+
+.card-contagem {
+  height: 150px;
+  width: 150px;
+  background-color: var(--manteiga);
+  border-radius: 10px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 10px;
+}
+
+.card-contagem h4 {
+  font-size: 40px;
+  font-family: var(--fonte-secundaria);
+  font-weight: lighter;
+  color: var(--marrom);
+}
+
+.card-contagem p {
+  font-family: var(--fonte-secundaria);
+  font-weight: lighter;
+  color: var(--marrom);
+  font-size: 20px;
+
+}
+
+.textos-inicio p {
+  color: var(--marrom);
+  font-family: var(--fonte-secundaria);
+  font-size: 22px;
+}
+
+.textos-inicio h2 {
+  color: var(--verde);
+  font-family: var(--fonte-principal);
+  font-weight: 700;
+  font-size: 70px;
+  font-style: italic;
+}
+
+#paragrafo-amor {
+  color: var(--verde);
+  font-family: var(--fonte-principal);
+  font-weight: 500;
+  font-style: italic;
+  font-size: 25px;
+  letter-spacing: 3px;
+}
+
+.row {
+  margin-top: 200px;
+}
+
+.nosso-ensaio {
+  margin-top: 100px;
+  margin-bottom: 40px;
+
+}
+
+@media (max-width: 480px) {
+  .flor-mobile {
+    width: 180px;
+  }
+
+  .textos-inicio p {
+    font-size: 13px;
+    padding: 0 20px;
+  }
+
+  .textos-inicio h2 {
+    font-size: 35px;
+    font-weight: 600;
+  }
+
+  .memoji {
+    width: 250px;
+  }
+
+  #carouselExample {
+    width: 370px !important;
+    height: 400px !important;
+    justify-self: center;
+  }
+
+  #texto-carrosel {
+    order: 2;
+    margin-top: 20px;
+  }
+
+  #imagem-carrosel {
+    order: 1;
+  }
+
+  #video-ensaio {
+    width: 360px;
+  }
+
+  .nosso-ensaio {
+    margin: 0;
+  }
+
+  #paragrafo-amor {
+    font-size: 15px;
+  }
+
+  .contagem {
+    height: 160px;
+  }
+
+  .contagem h1 {
+    font-size: 22px;
+    letter-spacing: 3px;
+    font-weight: 500;
+  }
+
+  .card-contagem {
+    height: 40px;
+    width: 70px;
+    padding: 30px 20px 40px 20px;
+    margin-top: 20px;
+  }
+
+  .card-contagem h4 {
+    font-size: 20px;
+    padding-top: 20px;
+    margin-bottom: 5px;
+  }
+
+  .card-contagem p {
+    font-size: 10px;
+    letter-spacing: 1px;
+
+  }
+
+  #banner-mobile {
+    width: 100%;
+    height: 500px;
+    /* altura fixa para o mobile */
+    object-fit: cover;
+    /* cobre toda a área */
+    object-position: 35% 50%;
+    /* foco no meio do casal */
+  }
+}

@@ -38,35 +38,37 @@ function Login({ onLogin }) {
   }
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col d-flex justify-content-center align-items-center vh-100">
-          <img src={logo} alt="logo" width={300} />
+    <div className="d-flex justify-content-center align-items-center vh-100">
+      <div className="row g-0 align-items-center" id='monograma-espacamento'>
+        <div className="col-12 col-md-6 d-flex justify-content-center">
+          <img src={logo} id='monograma-mobile' alt="logo" width={300} />
         </div>
 
-        <div className="col d-flex justify-content-start align-items-center vh-100">
-          <div className="card border-0 shadow-sm p-4" style={{ width: "100%", maxWidth: 500 }}>
+        <div className="col-12 col-md-6 d-flex 
+                justify-content-center justify-content-md-start 
+                align-items-center align-items-md-center" id='card-bemvindo'>
+          <div className="card border-0 shadow-sm p-4" style={{ width: "100%" }}>
             <div className="card-body m-1">
               <h5 className="card-title text-center mb-4">Bem Vindo</h5>
-              <h6 className="card-subtitle text-center mb-4">
+              <h6 className="card-subtitle text-center mb-3">
                 Acesse a página com o código descrito em seu convite
               </h6>
 
               <form onSubmit={handleLogin}>
-                <div className="mb-3">
-                  <label htmlFor="codigoConvite" className="form-label mb-3">
+                <div className="mb-3 espaco-codigo">
+                  <label htmlFor="codigoConvite" className="form-label mb-3 label-text">
                     Código do convite
                   </label>
                   <input
                     type="text"
                     className="form-control mb-4"
                     id="codigoConvite"
-                    placeholder="Digite aqui o seu código de convite"
+                    placeholder="Digite aqui o seu código"
                     value={codigo}
                     onChange={(e) => setCodigo(e.target.value)}
                   />
 
-                  <button type="submit" className="btn btn-primary w-100">
+                  <button type="submit" className="btn w-100">
                     Acessar
                   </button>
 
