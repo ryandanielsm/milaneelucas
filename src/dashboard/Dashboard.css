@@ -1,0 +1,479 @@
+.titulo-dashboard {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+
+.titulo-dashboard h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--fonte-principal);
+    color: var(--verde);
+    font-style: italic;
+    font-size: 40px;
+    font-weight: 900 !important;
+    letter-spacing: 5px;
+    margin: 0;
+}
+
+/* Header do Dashboard */
+.dashboard-header {
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+#monograma-mobile {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Botão do Dashboard */
+.botao-dashboard {
+    background-color: var(--verde);
+    color: var(--manteiga);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.botao-dashboard:hover {
+    background-color: var(--marrom);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.botao-dashboard a {
+    color: var(--manteiga);
+}
+
+.botao-dashboard:hover a {
+    color: var(--manteiga);
+}
+
+/* Cards de Estatísticas */
+.card-estatistica {
+    background: linear-gradient(135deg, var(--verde) 0%, #9FAE73 100%);
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.card-estatistica:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.icone-estatistica {
+    font-size: 50px;
+    color: var(--manteiga);
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.info-estatistica h3 {
+    font-family: var(--fonte-principal);
+    color: var(--manteiga);
+    font-size: 48px;
+    font-weight: 900;
+    margin: 0;
+    line-height: 1;
+}
+
+.info-estatistica p {
+    font-family: var(--fonte-secundaria);
+    color: var(--manteiga);
+    font-size: 18px;
+    margin: 5px 0 0 0;
+    opacity: 0.9;
+}
+
+/* Container das Tabelas */
+.tabela-container {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    height: 100%;
+}
+
+.tabela-header {
+    background-color: var(--verde);
+    padding: 20px 25px;
+    border-bottom: 3px solid var(--marrom);
+}
+
+.tabela-header h5 {
+    font-family: var(--fonte-secundaria);
+    color: var(--manteiga);
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.tabela-body {
+    padding: 0;
+    min-height: 300px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+/* Estilo da Tabela */
+.tabela-body table {
+    margin: 0;
+}
+
+.tabela-body thead {
+    position: sticky;
+    top: 0;
+    background-color: #f8f9fa;
+    z-index: 10;
+}
+
+.tabela-body thead th {
+    font-family: var(--fonte-secundaria);
+    color: var(--marrom);
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 15px 20px;
+    border-bottom: 2px solid var(--verde);
+}
+
+.tabela-body tbody td {
+    font-family: var(--fonte-secundaria);
+    color: var(--marrom);
+    font-size: 16px;
+    padding: 15px 20px;
+    vertical-align: middle;
+}
+
+.tabela-body tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.tabela-body tbody tr:hover {
+    background-color: rgba(159, 174, 115, 0.1);
+}
+
+.presente-nome {
+    font-weight: 600;
+    color: var(--verde);
+}
+
+.data-coluna {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Estados de Loading e Vazio */
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+}
+
+.sem-dados {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    color: #999;
+}
+
+.sem-dados i {
+    font-size: 60px;
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+
+.sem-dados p {
+    font-family: var(--fonte-secundaria);
+    font-size: 18px;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Scrollbar personalizada */
+.tabela-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.tabela-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.tabela-body::-webkit-scrollbar-thumb {
+    background: var(--verde);
+    border-radius: 4px;
+}
+
+.tabela-body::-webkit-scrollbar-thumb:hover {
+    background: var(--marrom);
+}
+
+/* Responsividade - Tablet */
+@media (max-width: 992px) {
+    .titulo-dashboard h1 {
+        font-size: 32px;
+        letter-spacing: 3px;
+    }
+
+    .card-estatistica {
+        padding: 20px;
+    }
+
+    .icone-estatistica {
+        font-size: 40px;
+        width: 70px;
+        height: 70px;
+    }
+
+    .info-estatistica h3 {
+        font-size: 40px;
+    }
+
+    .info-estatistica p {
+        font-size: 16px;
+    }
+
+    .tabela-header h5 {
+        font-size: 18px;
+    }
+}
+
+/* Responsividade - Mobile */
+@media (max-width: 768px) {
+
+    /* Header */
+    .dashboard-header .row {
+        gap: 15px;
+    }
+
+    .dashboard-header .col-6 {
+        width: 100%;
+        justify-content: center !important;
+    }
+
+    .dashboard-header .col-6:first-child {
+        order: 1;
+    }
+
+    .dashboard-header .col-6:last-child {
+        order: 2;
+        margin-top: 15px;
+    }
+
+    #monograma-mobile {
+        width: 70px;
+    }
+
+    .botao-dashboard {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+
+    /* Título */
+    .titulo-dashboard {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .titulo-dashboard h1 {
+        font-size: 28px;
+        letter-spacing: 2px;
+    }
+
+    .titulo-dashboard img {
+        width: 70px !important;
+    }
+
+    /* Cards de Estatísticas */
+    .card-estatistica {
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .icone-estatistica {
+        font-size: 45px;
+        width: 70px;
+        height: 70px;
+    }
+
+    .info-estatistica h3 {
+        font-size: 36px;
+    }
+
+    .info-estatistica p {
+        font-size: 15px;
+    }
+
+    /* Tabelas */
+    .tabela-header h5 {
+        font-size: 16px;
+    }
+
+    .tabela-body {
+        max-height: 400px;
+    }
+
+    .tabela-body thead th {
+        font-size: 11px;
+        padding: 12px 10px;
+    }
+
+    .tabela-body tbody td {
+        font-size: 14px;
+        padding: 12px 10px;
+    }
+
+    .data-coluna {
+        font-size: 11px;
+    }
+}
+
+/* Responsividade - Mobile Pequeno */
+@media (max-width: 480px) {
+
+    /* Header */
+    #monograma-mobile {
+        width: 60px;
+    }
+
+    .botao-dashboard {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+
+    /* Título */
+    .titulo-dashboard h1 {
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
+
+    .titulo-dashboard img {
+        width: 60px !important;
+    }
+
+    /* Cards */
+    .card-estatistica {
+        padding: 15px;
+    }
+
+    .icone-estatistica {
+        font-size: 40px;
+        width: 60px;
+        height: 60px;
+    }
+
+    .info-estatistica h3 {
+        font-size: 32px;
+    }
+
+    .info-estatistica p {
+        font-size: 13px;
+    }
+
+    /* Tabelas */
+    .tabela-header {
+        padding: 15px 15px;
+    }
+
+    .tabela-header h5 {
+        font-size: 14px;
+    }
+
+    .tabela-body {
+        min-height: 250px;
+        max-height: 350px;
+    }
+
+    .tabela-body thead th {
+        font-size: 10px;
+        padding: 10px 8px;
+        letter-spacing: 0.5px;
+    }
+
+    .tabela-body tbody td {
+        font-size: 13px;
+        padding: 10px 8px;
+    }
+
+    /* Esconder coluna de data em mobile pequeno */
+    .data-coluna {
+        display: none;
+    }
+
+    .sem-dados i {
+        font-size: 40px;
+    }
+
+    .sem-dados p {
+        font-size: 14px;
+    }
+}
+
+/* Responsividade - Mobile Extra Pequeno */
+@media (max-width: 360px) {
+    .titulo-dashboard h1 {
+        font-size: 20px;
+    }
+
+    .botao-dashboard {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    .card-estatistica {
+        padding: 12px;
+    }
+
+    .info-estatistica h3 {
+        font-size: 28px;
+    }
+
+    .info-estatistica p {
+        font-size: 12px;
+    }
+
+    .tabela-header h5 {
+        font-size: 13px;
+    }
+
+    .tabela-body thead th {
+        font-size: 9px;
+        padding: 8px 6px;
+    }
+
+    .tabela-body tbody td {
+        font-size: 12px;
+        padding: 8px 6px;
+    }
+}

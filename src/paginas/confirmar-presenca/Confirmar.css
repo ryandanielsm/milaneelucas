@@ -82,6 +82,18 @@
     border-color: var(--manteiga);
 }
 
+/* Estilo para botão desabilitado */
+.botao:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.botao:disabled:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
 .input-pequeno {
     width: 450px;
     max-width: 100%;
@@ -103,6 +115,177 @@
 
 .coluna {
     margin-bottom: 200px;
+}
+
+/* Mensagens de feedback */
+.mensagem-feedback {
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: var(--fonte-secundaria);
+    font-size: 16px;
+    font-weight: 500;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mensagem-feedback.sucesso {
+    background-color: rgba(144, 238, 144, 0.2);
+    color: #90EE90;
+    border: 1px solid #90EE90;
+}
+
+.mensagem-feedback.erro {
+    background-color: rgba(255, 99, 71, 0.2);
+    color: #FF6347;
+    border: 1px solid #FF6347;
+}
+
+/* Melhorar cursor do ícone de lixeira */
+.bi-trash {
+    transition: color 0.2s ease;
+}
+
+.bi-trash:hover {
+    color: #FF6347 !important;
+}
+
+/* Modal de Agradecimento */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-conteudo {
+    background-color: var(--manteiga);
+    padding: 50px 40px;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.4s ease;
+    position: relative;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-icone {
+    font-size: 80px;
+    color: var(--verde);
+    margin-bottom: 20px;
+    animation: scaleIn 0.5s ease 0.2s both;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.modal-titulo {
+    font-family: var(--fonte-principal);
+    color: var(--marrom);
+    font-size: 36px;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.modal-texto {
+    font-family: var(--fonte-secundaria);
+    color: var(--marrom);
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.modal-subtexto {
+    font-family: var(--fonte-secundaria);
+    color: var(--marrom);
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.modal-mensagem {
+    font-family: var(--fonte-secundaria);
+    color: var(--verde);
+    font-size: 18px;
+    font-weight: 600;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.modal-botao {
+    background-color: var(--verde);
+    color: var(--manteiga);
+    border: none;
+    padding: 12px 40px;
+    border-radius: 8px;
+    font-family: var(--fonte-secundaria);
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-botao:hover {
+    background-color: var(--marrom);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.modal-botao:active {
+    transform: translateY(0);
 }
 
 @media (max-width: 480px) {
@@ -142,5 +325,40 @@
 
     .coluna {
         margin-bottom: 80px;
+    }
+
+    .mensagem-feedback {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    .modal-conteudo {
+        padding: 40px 30px;
+        width: 95%;
+    }
+
+    .modal-icone {
+        font-size: 60px;
+    }
+
+    .modal-titulo {
+        font-size: 28px;
+    }
+
+    .modal-texto {
+        font-size: 18px;
+    }
+
+    .modal-subtexto {
+        font-size: 14px;
+    }
+
+    .modal-mensagem {
+        font-size: 16px;
+    }
+
+    .modal-botao {
+        padding: 10px 30px;
+        font-size: 16px;
     }
 }

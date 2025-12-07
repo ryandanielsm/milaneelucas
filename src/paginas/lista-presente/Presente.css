@@ -41,7 +41,27 @@
 .botao-lista:active {
     background-color: rgba(0, 0, 0, 0.2);
     transition: background-color 0.1s, transform 0.1s;
-     transform: scale(0.97) translateY(0px);
+    transform: scale(0.97) translateY(0px);
+    box-shadow: none;
+}
+
+/* Botão Reservar Presente */
+.botao-reservar {
+    background-color: var(--marrom);
+    color: var(--manteiga);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.botao-reservar:hover {
+    background-color: #6B5A3E;
+    color: var(--manteiga);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.botao-reservar:active {
+    transform: scale(0.97) translateY(0px);
     box-shadow: none;
 }
 
@@ -81,26 +101,294 @@
     color: var(--marrom);
     font-size: 24px;
     font-weight: 500;
-    
+
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Modal de Reserva */
+.modal-conteudo-reserva {
+    background-color: var(--manteiga);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-titulo-reserva {
+    font-family: var(--fonte-principal);
+    color: var(--marrom);
+    font-size: 32px;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.modal-texto-reserva {
+    font-family: var(--fonte-secundaria);
+    color: var(--marrom);
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.input-reserva {
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid var(--verde);
+    border-radius: 8px;
+    font-family: var(--fonte-secundaria);
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease;
+}
+
+.input-reserva:focus {
+    outline: none;
+    border-color: var(--marrom);
+}
+
+.input-reserva::placeholder {
+    color: #999;
+}
+
+.mensagem-erro-reserva {
+    background-color: rgba(255, 99, 71, 0.2);
+    color: #FF6347;
+    border: 1px solid #FF6347;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-family: var(--fonte-secundaria);
+    font-size: 14px;
+}
+
+.modal-botoes {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.modal-botao-cancelar,
+.modal-botao-confirmar {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-family: var(--fonte-secundaria);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-botao-cancelar {
+    background-color: #ccc;
+    color: #666;
+}
+
+.modal-botao-cancelar:hover {
+    background-color: #b3b3b3;
+    transform: translateY(-2px);
+}
+
+.modal-botao-confirmar {
+    background-color: var(--verde);
+    color: var(--manteiga);
+}
+
+.modal-botao-confirmar:hover {
+    background-color: #9FAE73;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.modal-botao-cancelar:disabled,
+.modal-botao-confirmar:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Modal de Agradecimento (reutilizando do componente Confirmar) */
+.modal-conteudo {
+    background-color: var(--manteiga);
+    padding: 50px 40px;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.4s ease;
+    position: relative;
+}
+
+.modal-icone {
+    font-size: 80px;
+    color: var(--verde);
+    margin-bottom: 20px;
+    animation: scaleIn 0.5s ease 0.2s both;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.modal-titulo {
+    font-family: var(--fonte-principal);
+    color: var(--marrom);
+    font-size: 36px;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.modal-texto {
+    font-family: var(--fonte-secundaria);
+    color: var(--marrom);
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.modal-subtexto {
+    font-family: var(--fonte-secundaria);
+    color: var(--marrom);
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.modal-mensagem {
+    font-family: var(--fonte-secundaria);
+    color: var(--verde);
+    font-size: 18px;
+    font-weight: 600;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.modal-botao {
+    background-color: var(--verde);
+    color: var(--manteiga);
+    border: none;
+    padding: 12px 40px;
+    border-radius: 8px;
+    font-family: var(--fonte-secundaria);
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-botao:hover {
+    background-color: var(--marrom);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.modal-botao:active {
+    transform: translateY(0);
 }
 
 @media (max-width: 480px) {
- .texto-lista h1 {
-    font-size: 30px;
-    font-weight: bold;
-    padding-top: 100px;
- }
- .texto-lista p {
-    font-size: 16px;
-    padding: 0 50px;
+    .texto-lista h1 {
+        font-size: 30px;
+        font-weight: bold;
+        padding-top: 100px;
+    }
 
-}
+    .texto-lista p {
+        font-size: 16px;
+        padding: 0 50px;
 
-.card-group {
-    padding: 20px 0 !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+    }
+
+    .card-group {
+        padding: 20px 0 !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-conteudo-reserva,
+    .modal-conteudo {
+        padding: 30px 25px;
+        width: 95%;
+    }
+
+    .modal-titulo-reserva,
+    .modal-titulo {
+        font-size: 26px;
+    }
+
+    .modal-texto-reserva,
+    .modal-texto {
+        font-size: 16px;
+    }
+
+    .modal-icone {
+        font-size: 60px;
+    }
+
+    .modal-botoes {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .modal-botao-cancelar,
+    .modal-botao-confirmar {
+        width: 100%;
+        padding: 10px 20px;
+    }
+
+    .input-reserva {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
 }
