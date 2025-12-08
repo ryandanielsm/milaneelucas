@@ -3,9 +3,12 @@ import Header from "../../componentes/header/Header";
 import banner from "../../assets/banner-destaque.JPG";
 import flor from "../../assets/flor-1.png";
 import memoji from "../../assets/memoji.png";
-import carrosel1 from "../../assets/carrosel1.png";
+import carrosel11 from "../../assets/carrosel11.png";
 import carrosel2 from "../../assets/carrosel2.png";
 import carrosel3 from "../../assets/carrosel3.png";
+import carrosel4 from "../../assets/carrosel4.png";
+import carrosel5 from "../../assets/carrosel5.png";
+import carrosel6 from "../../assets/carrosel6.png";
 import "./Inicio.css";
 import video from "../../assets/video.mp4";
 
@@ -96,7 +99,7 @@ function Inicio() {
         <img className="mb-1 mt-3 flor-mobile" src={flor} alt="#" width={300} />
         <h2 className="mt-5">SOBRE NÓS</h2>
         <img className="mt-3 mb-5 memoji" src={memoji} alt="#" width={400} />
-        <p className="mb-5">
+        <p>
           Nos conhecemos ainda na adolescência, quando o amor era inocente, os
           dias eram cheios de descobertas e todos os sonhos eram possíveis.
           Tivemos um namorinho típico dessa fase de mãos dadas, trocas de
@@ -107,7 +110,7 @@ function Inicio() {
           tempo, a vida os levou por caminhos diferentes, e cada um seguiu sua
           jornada.
         </p>
-        <div className="row mb-3">
+        <div className="row">
           <div className="col-sm-12 col-xl-6" id="texto-carrosel">
             <p>
               Anos depois, já mais maduros e com novas experiências, os planos
@@ -122,16 +125,25 @@ function Inicio() {
             </p>
           </div>
           <div className="col-sm-12 col-xl-6" id="imagem-carrosel">
-            <div id="carouselExample" className="carousel slide">
+            <div id="carouselExample" className="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="false">
               <div className="carousel-inner">
                 <div className="carousel-item active">
-                  <img src={carrosel1} alt="" className="carousel-img" />
+                  <img src={carrosel11} alt="" className="carousel-img" />
                 </div>
                 <div className="carousel-item">
                   <img src={carrosel2} alt="" className="carousel-img" />
                 </div>
                 <div className="carousel-item">
                   <img src={carrosel3} alt="" className="carousel-img" />
+                </div>
+                <div className="carousel-item">
+                  <img src={carrosel4} alt="" className="carousel-img" />
+                </div>
+                <div className="carousel-item">
+                  <img src={carrosel5} alt="" className="carousel-img" />
+                </div>
+                <div className="carousel-item">
+                  <img src={carrosel6} alt="" className="carousel-img" />
                 </div>
               </div>
               <button
@@ -161,7 +173,7 @@ function Inicio() {
             </div>
           </div>
         </div>
-        <div>
+        {/* <div>
           <h2 className="nosso-ensaio">NOSSO ENSAIO</h2>
 
           <div className="ratio ratio-16x9 video-wrapper">
@@ -176,7 +188,7 @@ function Inicio() {
           </div>
 
           <p id="paragrafo-amor">Com amor, Milane e Lucas.</p>
-        </div>
+        </div> */}
       </div>
     </>
   );

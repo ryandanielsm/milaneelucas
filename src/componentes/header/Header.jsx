@@ -18,7 +18,7 @@ function Header({ onLogout }) {
 
   return (
     <nav
-      className={`navbar navbar-expand-lg position-absolute top-0 start-0 w-100 p-0 p-xl-5 
+      className={`navbar navbar-expand-md position-absolute top-0 start-0 w-100 p-0 p-xl-5 
       ${isInicio ? "inicio-page" : ""}`}
     >
       <div className="container-fluid justify-content-center position-relative px-0">
@@ -31,15 +31,15 @@ function Header({ onLogout }) {
           />
 
           <img
-            src={logoMarrom}
+            src={isInicio ? logoBranca : logoMarrom}
             width={82}
             alt="Logo"
-            className="logo d-md-none"
+            className="logo d-block d-md-none"
           />
         </Link>
 
         <button
-          className="hamburger-btn d-lg-none"
+          className="hamburger-btn d-md-none"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbar"
@@ -77,17 +77,22 @@ function Header({ onLogout }) {
                 LISTA DE PRESENTES
               </Link>
             </li>
+            <li className="nav-item d-md-none">
+              <button className="nav-link btn-logout-mobile" onClick={handleLogout}>
+                <i className="bi bi-box-arrow-right"></i> SAIR
+              </button>
+            </li>
           </ul>
         </div>
 
         {/* Botão de Logout */}
         <button
-          className="btn-logout position-absolute end-0 me-3"
+          className="btn-logout position-absolute end-0 me-3 d-none d-md-block"
           onClick={handleLogout}
           title="Sair"
         >
           <i className="bi bi-box-arrow-right"></i>
-          <span className="d-none d-md-inline ms-2">Sair</span>
+          <span className="ms-2">Sair</span>
         </button>
       </div>
     </nav>

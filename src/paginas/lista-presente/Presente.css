@@ -1,394 +1,515 @@
 .texto-lista h1 {
-    padding-top: 150px;
-    font-family: var(--fonte-principal);
-    color: var(--verde);
-    font-weight: 600;
-    font-style: italic;
-    font-size: 80px;
-    letter-spacing: 5px;
+  padding-top: 150px;
+  font-family: var(--fonte-principal);
+  color: var(--verde);
+  font-weight: 600;
+  font-style: italic;
+  font-size: 80px;
+  letter-spacing: 5px;
 }
 
 .texto-lista p {
-    color: var(--marrom);
-    font-size: 20px;
-
+  color: var(--marrom);
+  font-size: 20px;
 }
 
 .card-presente h5 {
-    color: var(--manteiga);
-    font-family: var(--fonte-secundaria);
-    font-size: 25px;
-    font-style: normal;
-
+  color: var(--manteiga);
+  font-family: var(--fonte-secundaria);
+  font-size: 25px;
+  font-style: normal;
 }
 
 .card-presente {
-    background-color: var(--verde);
+  background-color: var(--verde);
 }
 
 .botao-lista {
-    background-color: var(--manteiga);
-    color: var(--verde);
+  background-color: var(--manteiga);
+  color: var(--verde);
 }
 
 .botao-lista:hover {
-    background-color: #9FAE73;
-    color: var(--manteiga);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background-color: #9fae73;
+  color: var(--manteiga);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .botao-lista:active {
-    background-color: rgba(0, 0, 0, 0.2);
-    transition: background-color 0.1s, transform 0.1s;
-    transform: scale(0.97) translateY(0px);
-    box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: background-color 0.1s, transform 0.1s;
+  transform: scale(0.97) translateY(0px);
+  box-shadow: none;
 }
 
 /* Botão Reservar Presente */
 .botao-reservar {
-    background-color: var(--marrom);
-    color: var(--manteiga);
-    border: none;
-    transition: all 0.3s ease;
+  background-color: var(--manteiga);
+  color: var(--verde);
+  border: none;
+  transition: all 0.3s ease;
 }
 
 .botao-reservar:hover {
-    background-color: #6B5A3E;
-    color: var(--manteiga);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background-color: #6b5a3e;
+  color: var(--manteiga);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .botao-reservar:active {
-    transform: scale(0.97) translateY(0px);
-    box-shadow: none;
+  transform: scale(0.97) translateY(0px);
+  box-shadow: none;
 }
 
 .mais {
-    font-family: var(--fonte-principal);
-    color: var(--verde);
-    font-weight: 500;
-    font-style: italic;
-    font-size: 60px;
-    letter-spacing: 2px;
+  font-family: var(--fonte-principal);
+  color: var(--verde);
+  font-weight: 500;
+  font-style: italic;
+  font-size: 60px;
+  letter-spacing: 2px;
 }
 
 .mais-paragrafo {
-    font-family: var(--fonte-secundaria);
-    color: var(--marrom);
+  font-family: var(--fonte-secundaria);
+  color: var(--marrom);
+  font-size: 18px;
 }
 
 .pix {
-    background-color: var(--verde);
-    border-radius: 10px;
-    color: var(--manteiga);
-    font-size: 20px;
-    padding: 10px 2px 0 2px;
+  background-color: var(--verde);
+  border-radius: 10px;
+  color: var(--manteiga);
+  font-size: 20px;
+  padding: 10px 2px 0 2px;
 }
 
 #cozinha-titulo {
-    font-family: var(--fonte-secundaria);
-    color: var(--marrom);
-    font-weight: 600;
-    letter-spacing: 3px;
-    font-size: 50px;
-    margin-bottom: 30px;
+  font-family: var(--fonte-secundaria);
+  color: var(--marrom);
+  font-weight: 600;
+  letter-spacing: 3px;
+  font-size: 50px;
+  margin-bottom: 30px;
 }
 
 #cozinha-paragrafo {
-    font-family: var(--fonte-secundaria);
-    color: var(--marrom);
-    font-size: 24px;
-    font-weight: 500;
-
+  font-family: var(--fonte-secundaria);
+  color: var(--marrom);
+  font-size: 24px;
+  font-weight: 500;
 }
 
 /* Modal Overlay */
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    animation: fadeIn 0.3s ease;
-    backdrop-filter: blur(5px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+  backdrop-filter: blur(5px);
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
+  from {
+    opacity: 0;
+  }
 
-    to {
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Modal de Reserva */
 .modal-conteudo-reserva {
-    background-color: var(--manteiga);
-    padding: 40px;
-    border-radius: 20px;
-    max-width: 500px;
-    width: 90%;
-    text-align: center;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-    animation: slideUp 0.4s ease;
+  background-color: var(--manteiga);
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.4s ease;
 }
 
 @keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .modal-titulo-reserva {
-    font-family: var(--fonte-principal);
-    color: var(--marrom);
-    font-size: 32px;
-    font-weight: 700;
-    font-style: italic;
-    margin-bottom: 15px;
+  font-family: var(--fonte-principal);
+  color: var(--marrom);
+  font-size: 32px;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 15px;
 }
 
 .modal-texto-reserva {
-    font-family: var(--fonte-secundaria);
-    color: var(--marrom);
-    font-size: 18px;
-    margin-bottom: 20px;
+  font-family: var(--fonte-secundaria);
+  color: var(--marrom);
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
 .input-reserva {
-    width: 100%;
-    padding: 12px 20px;
-    border: 2px solid var(--verde);
-    border-radius: 8px;
-    font-family: var(--fonte-secundaria);
-    font-size: 16px;
-    margin-bottom: 20px;
-    transition: border-color 0.3s ease;
+  width: 100%;
+  padding: 12px 20px;
+  border: 2px solid var(--verde);
+  border-radius: 8px;
+  font-family: var(--fonte-secundaria);
+  font-size: 16px;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease;
 }
 
 .input-reserva:focus {
-    outline: none;
-    border-color: var(--marrom);
+  outline: none;
+  border-color: var(--marrom);
 }
 
 .input-reserva::placeholder {
-    color: #999;
+  color: #999;
 }
 
 .mensagem-erro-reserva {
-    background-color: rgba(255, 99, 71, 0.2);
-    color: #FF6347;
-    border: 1px solid #FF6347;
-    padding: 10px 15px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    font-family: var(--fonte-secundaria);
-    font-size: 14px;
+  background-color: rgba(255, 99, 71, 0.2);
+  color: #ff6347;
+  border: 1px solid #ff6347;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-family: var(--fonte-secundaria);
+  font-size: 14px;
 }
 
 .modal-botoes {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
 }
 
 .modal-botao-cancelar,
 .modal-botao-confirmar {
-    padding: 12px 30px;
-    border: none;
-    border-radius: 8px;
-    font-family: var(--fonte-secundaria);
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--fonte-secundaria);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .modal-botao-cancelar {
-    background-color: #ccc;
-    color: #666;
+  background-color: #ccc;
+  color: #666;
 }
 
 .modal-botao-cancelar:hover {
-    background-color: #b3b3b3;
-    transform: translateY(-2px);
+  background-color: #b3b3b3;
+  transform: translateY(-2px);
 }
 
 .modal-botao-confirmar {
-    background-color: var(--verde);
-    color: var(--manteiga);
+  background-color: var(--verde);
+  color: var(--manteiga);
 }
 
 .modal-botao-confirmar:hover {
-    background-color: #9FAE73;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background-color: #9fae73;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .modal-botao-cancelar:disabled,
 .modal-botao-confirmar:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    transform: none;
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
 }
 
 /* Modal de Agradecimento (reutilizando do componente Confirmar) */
 .modal-conteudo {
-    background-color: var(--manteiga);
-    padding: 50px 40px;
-    border-radius: 20px;
-    max-width: 500px;
-    width: 90%;
-    text-align: center;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-    animation: slideUp 0.4s ease;
-    position: relative;
+  background-color: var(--manteiga);
+  padding: 50px 40px;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.4s ease;
+  position: relative;
 }
 
 .modal-icone {
-    font-size: 80px;
-    color: var(--verde);
-    margin-bottom: 20px;
-    animation: scaleIn 0.5s ease 0.2s both;
+  font-size: 80px;
+  color: var(--verde);
+  margin-bottom: 20px;
+  animation: scaleIn 0.5s ease 0.2s both;
 }
 
 @keyframes scaleIn {
-    from {
-        transform: scale(0);
-    }
+  from {
+    transform: scale(0);
+  }
 
-    to {
-        transform: scale(1);
-    }
+  to {
+    transform: scale(1);
+  }
 }
 
 .modal-titulo {
-    font-family: var(--fonte-principal);
-    color: var(--marrom);
-    font-size: 36px;
-    font-weight: 700;
-    font-style: italic;
-    margin-bottom: 15px;
+  font-family: var(--fonte-secundaria);
+  color: var(--verde);
+  font-size: 36px;
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 15px;
 }
 
 .modal-texto {
-    font-family: var(--fonte-secundaria);
-    color: var(--marrom);
-    font-size: 20px;
-    font-weight: 500;
-    margin-bottom: 10px;
+  font-family: var(--fonte-secundaria);
+  color: var(--marrom);
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
 
 .modal-subtexto {
-    font-family: var(--fonte-secundaria);
-    color: var(--marrom);
-    font-size: 16px;
-    font-weight: 400;
-    margin-bottom: 20px;
-    opacity: 0.8;
+  font-family: var(--fonte-secundaria);
+  color: var(--marrom);
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  opacity: 0.8;
 }
 
 .modal-mensagem {
-    font-family: var(--fonte-secundaria);
-    color: var(--verde);
-    font-size: 18px;
-    font-weight: 600;
-    font-style: italic;
-    margin-bottom: 30px;
+  font-family: var(--fonte-secundaria);
+  color: var(--verde);
+  font-size: 18px;
+  font-weight: 600;
+  font-style: italic;
+  margin-bottom: 30px;
 }
 
 .modal-botao {
-    background-color: var(--verde);
-    color: var(--manteiga);
-    border: none;
-    padding: 12px 40px;
-    border-radius: 8px;
-    font-family: var(--fonte-secundaria);
-    font-size: 18px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  background-color: var(--verde);
+  color: var(--manteiga);
+  border: none;
+  padding: 12px 40px;
+  border-radius: 8px;
+  font-family: var(--fonte-secundaria);
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .modal-botao:hover {
-    background-color: var(--marrom);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background-color: var(--marrom);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .modal-botao:active {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
+/* Tablet - 768px a 991px */
+@media (min-width: 768px) and (max-width: 991px) {
+  .texto-lista h1 {
+    font-size: 50px;
+    padding-top: 120px;
+  }
+
+  .texto-lista p {
+    font-size: 18px;
+    padding: 0 20px;
+  }
+
+  .card-group {
+    padding: 20px 10px !important;
+  }
+
+  .card-presente {
+    margin: 10px;
+  }
+
+  .card-presente h5 {
+    font-size: 20px;
+  }
+
+  .mais {
+    font-size: 45px;
+  }
+
+  .mais-paragrafo {
+    font-size: 16px;
+  }
+
+  #cozinha-titulo {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+
+  #cozinha-paragrafo {
+    font-size: 20px;
+  }
+
+  .modal-conteudo-reserva,
+  .modal-conteudo {
+    padding: 35px 30px;
+    width: 90%;
+  }
+
+  .modal-titulo-reserva,
+  .modal-titulo {
+    font-size: 28px;
+  }
+
+  .modal-texto-reserva,
+  .modal-texto {
+    font-size: 16px;
+  }
+
+  .modal-icone {
+    font-size: 70px;
+  }
+
+  .pix {
+    font-size: 16px;
+  }
+}
+
+/* Mobile - até 767px */
+@media (max-width: 767px) {
+  .texto-lista h1 {
+    font-size: 35px;
+    padding-top: 100px;
+  }
+
+  .texto-lista p {
+    font-size: 16px;
+    padding: 0 15px;
+  }
+
+  .card-group {
+    padding: 20px 0 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card-presente {
+    margin: 10px 0;
+  }
+
+  .card-presente h5 {
+    font-size: 18px;
+  }
+
+  .mais {
+    font-size: 35px;
+  }
+
+  .mais-paragrafo {
+    font-size: 14px;
+  }
+
+  #cozinha-titulo {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+
+  #cozinha-paragrafo {
+    font-size: 16px;
+  }
+
+  .pix {
+    font-size: 14px;
+  }
+}
+
+/* Smartphone - até 480px */
 @media (max-width: 480px) {
-    .texto-lista h1 {
-        font-size: 30px;
-        font-weight: bold;
-        padding-top: 100px;
-    }
+  .texto-lista h1 {
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 100px;
+  }
 
-    .texto-lista p {
-        font-size: 16px;
-        padding: 0 50px;
+  .texto-lista p {
+    font-size: 16px;
+    padding: 0 50px;
+  }
 
-    }
+  .card-group {
+    padding: 20px 0 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .card-group {
-        padding: 20px 0 !important;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+  .modal-conteudo-reserva,
+  .modal-conteudo {
+    padding: 30px 25px;
+    width: 95%;
+  }
 
-    .modal-conteudo-reserva,
-    .modal-conteudo {
-        padding: 30px 25px;
-        width: 95%;
-    }
+  .modal-titulo-reserva,
+  .modal-titulo {
+    font-size: 26px;
+  }
 
-    .modal-titulo-reserva,
-    .modal-titulo {
-        font-size: 26px;
-    }
+  .modal-texto-reserva,
+  .modal-texto {
+    font-size: 16px;
+  }
 
-    .modal-texto-reserva,
-    .modal-texto {
-        font-size: 16px;
-    }
+  .modal-icone {
+    font-size: 60px;
+  }
 
-    .modal-icone {
-        font-size: 60px;
-    }
+  .modal-botoes {
+    flex-direction: column;
+    gap: 10px;
+  }
 
-    .modal-botoes {
-        flex-direction: column;
-        gap: 10px;
-    }
+  .modal-botao-cancelar,
+  .modal-botao-confirmar {
+    width: 100%;
+    padding: 10px 20px;
+  }
 
-    .modal-botao-cancelar,
-    .modal-botao-confirmar {
-        width: 100%;
-        padding: 10px 20px;
-    }
-
-    .input-reserva {
-        font-size: 14px;
-        padding: 10px 15px;
-    }
+  .input-reserva {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+  .mais-paragrafo {
+    font-size: 13px;
+  }
+  .pix {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
 }

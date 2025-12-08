@@ -1,12 +1,37 @@
 .carousel.slide {
-  width: 600px !important;
-  height: 400px !important;
+  width: 100% !important;
+  height: 300px !important;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.carousel-item {
+  transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+.carousel-item.active {
+  opacity: 1;
+  animation: carouselFadeIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes carouselFadeIn {
+  from {
+    opacity: 0;
+    transform: rotateY(45deg) scale(0.9);
+    filter: brightness(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: rotateY(0) scale(1);
+    filter: brightness(1);
+  }
 }
 
 .carousel img {
   width: 100%;
-  height: 400px;
+  height: 100%;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 .video-wrapper video {
@@ -18,7 +43,7 @@
 
 .contagem {
   background-color: var(--marrom);
-  background-image: url('../../assets/fundo-floral.png');
+  background-image: url("../../assets/fundo-floral.png");
   background-position: center;
   background-size: contain;
   height: 450px;
@@ -31,7 +56,6 @@
   font-size: 60px;
   font-weight: 500;
   margin-bottom: 0;
-
 }
 
 .card-contagem {
@@ -59,13 +83,12 @@
   font-weight: lighter;
   color: var(--marrom);
   font-size: 20px;
-
 }
 
 .textos-inicio p {
   color: var(--marrom);
   font-family: var(--fonte-secundaria);
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .textos-inicio h2 {
@@ -81,18 +104,34 @@
   font-family: var(--fonte-principal);
   font-weight: 500;
   font-style: italic;
-  font-size: 25px;
+  font-size: 20px;
   letter-spacing: 3px;
 }
 
 .row {
   margin-top: 200px;
+  display: flex;
+  align-items: flex-start;
+}
+
+#texto-carrosel {
+  display: flex;
+  align-items: flex-start;
+  padding: 0 5px;
+  margin-top: 100px;
+}
+
+#imagem-carrosel {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 20px;
+  margin-bottom: 300px;
 }
 
 .nosso-ensaio {
-  margin-top: 100px;
+  margin-top: 300px;
   margin-bottom: 40px;
-
 }
 
 .banner-wrapper {
@@ -106,33 +145,118 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.2) 0%,
-      /* preto bem suave no topo */
-      rgba(0, 0, 0, 0.0) 100%
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    /* preto bem suave no topo */ rgba(0, 0, 0, 0) 100%
       /* transparente embaixo */
-    );
+  );
   z-index: 1;
 }
 
-/* imagem */
-#banner-mobile {
-  /* width: 100%;
-  height: 500px;
-  object-fit: cover;
-  object-position: 35% 50%;
-  z-index: 1;
-  position: relative; */
+/* ============================
+   TABLET (768px - 991px)
+============================ */
+@media (min-width: 768px) and (max-width: 991px) {
+  .contagem h1 {
+    font-size: 40px;
+  }
+
+  .contagem {
+    height: 300px;
+  }
+
+  .card-contagem h4 {
+    font-size: 30px;
+  }
+
+  .card-contagem p {
+    font-size: 16px;
+  }
+
+  .card-contagem {
+    margin-top: 30px;
+    width: 120px;
+  }
+
+  .textos-inicio h2 {
+    font-size: 45px;
+  }
+
+  .textos-inicio p {
+    font-size: 16px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  #texto-carrosel {
+    order: 2;
+    margin-top: 20px;
+  }
+
+  #imagem-carrosel {
+    order: 1;
+  }
+
+  #carouselExample {
+    max-width: 450px;
+    height: 100px;
+    margin-bottom: 200px;
+  }
+
+  .row {
+    margin-top: 100px;
+  }
+
+  .nosso-ensaio {
+    margin-top: 50px;
+  }
+  .memoji {
+    width: 300px;
+  }
+
+  .flor-mobile {
+    width: 170px;
+  }
+  #imagem-carrosel {
+  
+  margin-bottom: 100px;
+}
 }
 
+/* ============================
+   MOBILE (até 767px)
+============================ */
+@media (max-width: 767px) {
+  .contagem h1 {
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
 
-@media (max-width: 480px) {
+  .card-contagem h4 {
+    font-size: 18px;
+  }
+
+  .card-contagem p {
+    font-size: 8px;
+  }
+
+  .card-contagem {
+    width: 60px;
+    padding: 20px 15px 30px 15px;
+  }
+
+  #paragrafo-amor {
+    font-size: 12px;
+  }
   .flor-mobile {
     width: 180px;
   }
 
   .textos-inicio p {
-    font-size: 13px;
+    font-size: 15px;
     padding: 0 20px;
   }
 
@@ -146,18 +270,22 @@
   }
 
   #carouselExample {
-    width: 370px !important;
-    height: 400px !important;
+    width: 100% !important;
+    height: 350px !important;
+    max-width: 370px;
     justify-self: center;
   }
 
   #texto-carrosel {
     order: 2;
-    margin-top: 20px;
+    margin-top: 130px;
+    padding: 0 15px;
   }
 
   #imagem-carrosel {
     order: 1;
+    padding: 0 15px;
+    margin: 0;
   }
 
   #video-ensaio {
@@ -190,7 +318,7 @@
   }
 
   .card-contagem h4 {
-    font-size: 20px;
+    font-size: 22px;
     padding-top: 20px;
     margin-bottom: 5px;
   }
@@ -198,7 +326,6 @@
   .card-contagem p {
     font-size: 10px;
     letter-spacing: 1px;
-
   }
 
   #banner-mobile {
@@ -206,7 +333,24 @@
     height: 500px;
     object-fit: cover;
     object-position: 35% 50%;
-    background: #2A7B9B;
-    background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+    background: #2a7b9b;
+    background: linear-gradient(
+      90deg,
+      rgba(42, 123, 155, 1) 0%,
+      rgba(87, 199, 133, 1) 50%,
+      rgba(237, 221, 83, 1) 100%
+    );
   }
+
+ .logo {
+  width: 50px;
+  margin-top: 60px;
+ }
+
+ .monograma-login {
+  width: 180px;
+  margin-bottom: 50px;
+ }
 }
+
+

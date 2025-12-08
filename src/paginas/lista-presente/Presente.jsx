@@ -15,10 +15,11 @@ import Televisao from "../../assets/televisao.png";
 import Jantar from "../../assets/jogo-de-jantar.png";
 import Panela from "../../assets/jogo-panelas.png";
 import Pressao from "../../assets/panela-pressao.png";
-import QRCODE from "../../assets/qrcode.png";
+import QRCODE from "../../assets/qrcode2.png";
 import Cozinha from "../../assets/cozinha.png";
 import Viagem from "../../assets/viagem.png";
 import Sala from "../../assets/sala.png";
+import Algodao from "../../assets/algodao.png";
 
 function Presente() {
   const [mostrarModalReserva, setMostrarModalReserva] = useState(false);
@@ -58,8 +59,14 @@ function Presente() {
       link: "https://produto.mercadolivre.com.br/MLB-3944483227#origin=share&sid=share&action=copy",
     },
     {
-      nome: "Jogo de Toalhas",
+      nome: "Jogo de Toalhas Extra Soft",
       imagem: Toalha,
+      descricao: "Para envolver nossos dias com conforto e carinho.",
+      link: "https://www.amazon.com.br/dp/B0DWXRW4HV?ref=cm_sw_r_cso_cp_apin_dp_GMZY2YF74E918ABG3J7F&ref_=cm_sw_r_cso_cp_apin_dp_GMZY2YF74E918ABG3J7F&social_share=cm_sw_r_cso_cp_apin_dp_GMZY2YF74E918ABG3J7F&th=1",
+    },
+    {
+      nome: "Jogo de Toalhas Algodão",
+      imagem: Algodao,
       descricao: "Para envolver nossos dias com conforto e carinho.",
       link: "https://www.amazon.com.br/dp/B0DWXRW4HV?ref=cm_sw_r_cso_cp_apin_dp_GMZY2YF74E918ABG3J7F&ref_=cm_sw_r_cso_cp_apin_dp_GMZY2YF74E918ABG3J7F&social_share=cm_sw_r_cso_cp_apin_dp_GMZY2YF74E918ABG3J7F&th=1",
     },
@@ -252,30 +259,36 @@ function Presente() {
       {/* Seção Mais Opções */}
       <div className="container d-flex flex-column justify-content-center align-items-center text-center ">
         <h2 className="mais mb-4">MAIS OPÇÕES</h2>
-        <p className="mais-paragrafo">
-          Se você deseja nos presentear com um apoio financeiro <br />
-          direto, ele será integralmente destinado á realização dos <br />{" "}
-          nossos grandes sonhos: a nossa viagem inesquecível e a <br />
-          mobília da nossa casa. Obrigado por fazer parte desse <br />
-          momento tão único para nós, seu presente é um passo a mais <br /> para
-          concretizarmos esses projetos.
-        </p>
-        <p className="mais-paragrafo">
-          Para nos presentear, escaneie o QR Code abaixo ou utilize a <br />
-          chave Pix Copia e Cola.
-        </p>
-        <div className="pix mt-4 d-flex flex-column justify-content-center align-items-center text-center w-25">
-          <p>
-            071.734.945-40 <br /> Milane Gerônimo Beserra de Lima
-          </p>
+        <div className="row">
+          <div className="col-12 col-md-6">
+            <p className="mais-paragrafo">
+              Se você deseja nos presentear com um apoio financeiro direto, ele
+              será integralmente destinado á realização dos nossos grandes
+              sonhos: a nossa viagem inesquecível e a mobília da nossa casa.
+              Obrigado por fazer parte desse momento tão único para nós, seu
+              presente é um passo a mais para concretizarmos esses projetos.
+            </p>
+            <p className="mais-paragrafo">
+              Para nos presentear, escaneie o QR Code abaixo ou utilize a <br />
+              chave Pix Copia e Cola.
+            </p>
+          </div>
+          <div className="col-12 col-md-6">
+            {" "}
+            {/* <div className="pix mt-4 d-flex flex-column justify-content-center align-items-center text-center p-2">
+              <p>
+                071.734.945-40 <br /> Milane Gerônimo Beserra de Lima
+              </p>
+            </div> */}
+            <img
+              className="qrcode-imagem mb-4 mt-3"
+              src={QRCODE}
+              alt="qrcode"
+              width={200}
+              height={200}
+            />
+          </div>
         </div>
-        <img
-          className="qrcode-imagem mb-4 mt-3"
-          src={QRCODE}
-          alt="qrcode"
-          width={400}
-          height={400}
-        />
       </div>
 
       {/* Seções de Cozinha, Viagem e Sala */}
@@ -395,9 +408,7 @@ function Presente() {
               O presente <strong>{presenteSelecionado}</strong> foi reservado
               com sucesso.
             </p>
-            <p className="modal-mensagem">
-              Sua generosidade nos enche de alegria e gratidão! 💚
-            </p>
+            <p className="modal-mensagem">Com amor, Milane e Lucas! </p>
             <button className="modal-botao" onClick={fecharModalAgradecimento}>
               Fechar
             </button>

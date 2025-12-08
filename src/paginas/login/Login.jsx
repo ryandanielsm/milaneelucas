@@ -59,7 +59,7 @@ function Login({ onLogin }) {
     <div className="d-flex justify-content-center align-items-center vh-100">
       <div className="row g-0 align-items-center" id="monograma-espacamento">
         <div className="col-12 col-md-6 d-flex justify-content-center">
-          <img src={logo} id="monograma-mobile" alt="logo" width={300} />
+          <img src={logo} className="monograma-login" alt="logo"/>
         </div>
 
         <div
@@ -90,7 +90,7 @@ function Login({ onLogin }) {
                     type="text"
                     className="form-control mb-4"
                     id="codigoConvite"
-                    placeholder="Digite aqui o seu código (ex: LIMA01)"
+                    placeholder="Digite aqui o seu código"
                     value={codigo}
                     onChange={(e) => setCodigo(e.target.value)}
                     disabled={carregando}
@@ -124,13 +124,6 @@ function Login({ onLogin }) {
                   )}
                 </div>
               </form>
-
-              <div className="text-center mt-3">
-                <small className="text-muted">
-                  <i className="bi bi-info-circle me-1"></i>O código está no seu
-                  convite
-                </small>
-              </div>
             </div>
           </div>
         </div>

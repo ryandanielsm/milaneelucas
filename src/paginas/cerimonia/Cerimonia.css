@@ -24,12 +24,6 @@
     height: auto;
 }
 
-.cerimonia h1 {
-    font-size: 48px;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
 .local {
     display: flex;
     justify-content: center;

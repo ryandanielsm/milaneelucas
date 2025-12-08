@@ -80,27 +80,100 @@
 }
 
 /* ============================
-          MOBILE
+   TABLET (768px - 991px)
 ============================ */
-@media (max-width: 991px) {
-
-  .logo {
-    display: none;
+@media (min-width: 768px) and (max-width: 991px) {
+  .navbar-collapse {
+    justify-content: center !important;
   }
 
-  /* Botão logout em mobile */
+  .navbar-nav {
+    gap: 10px;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+
+  .nav-link {
+    font-size: 16px;
+  }
+
   .btn-logout {
-    padding: 6px 12px;
-    font-size: 14px;
-    top: 20px;
-  }
-
-  .btn-logout span {
-    display: none;
+    font-size: 13px;
+    padding: 6px 10px;
   }
 
   .btn-logout i {
-    font-size: 20px;
+    font-size: 14px;
+  }
+
+  .logo {
+    display: none;
+    width: 55px;
+  }
+
+  /* Configurações para página inicial em tablet */
+  .inicio-page .nav-link {
+    color: var(--manteiga);
+  }
+
+  .inicio-page .nav-link:hover {
+    color: var(--manteiga);
+  }
+
+  /* Botão logout na página inicial em tablet */
+  .inicio-page .btn-logout {
+    border-color: var(--manteiga);
+    color: var(--manteiga);
+  }
+
+  .inicio-page .btn-logout:hover {
+    background-color: var(--manteiga);
+    color: var(--verde);
+  }
+}
+
+/* ============================
+   MOBILE (até 767px)
+============================ */
+@media (max-width: 767px) {
+  .navbar-collapse {
+    justify-content: center !important;
+  }
+
+  /* Ocultar logo quando menu está aberto */
+  .container-fluid:has(.navbar-collapse.show) .navbar-brand {
+    display: none !important;
+  }
+
+  .navbar-brand {
+    z-index: 1001;
+  }
+
+  .btn-logout {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .btn-logout i {
+    font-size: 15px;
+  }
+
+  .navbar-nav {
+    gap: 20px;
+  }
+
+  .nav-link {
+    font-size: 15px;
+    margin-top: 10px;
+  }
+}
+
+/* ============================
+   SMARTPHONE (até 468px)
+============================ */
+@media (max-width: 468px) {
+  .logo {
+    display: none;
   }
 
   /* Botão hamburger */
@@ -112,21 +185,24 @@
     justify-content: space-between;
     background: transparent;
     border: none;
-    padding: 0;
+    padding: 5px 3px 5px 3px;
     z-index: 2000;
     position: absolute;
     right: 70px;
     /* Ajustado para dar espaço ao botão de logout */
     top: 20px;
+    background-color: var(--manteiga);
+    border-radius: 5px;
+    
   }
 
   .hamburger-btn span {
     display: block;
-    height: 3px;
+    height: 2px;
     width: 100%;
     background: var(--marrom);
-    border-radius: 3px;
-    transition: .3s ease;
+    border-radius: 2px;
+    transition: 0.5s ease;
   }
 
   .hamburger-btn[aria-expanded="true"] span:nth-child(1) {
@@ -148,19 +224,37 @@
     letter-spacing: 3px;
     text-align: center;
   }
+
+  /* Botão Sair no menu mobile */
+  .btn-logout-mobile {
+    background: none;
+    border: none;
+    color: var(--marrom);
+    font-family: var(--fonte-principal);
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0;
+    cursor: pointer;
+    transition: 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-logout-mobile:hover {
+    color: var(--marrom);
+    transform: scale(0.97);
+    text-decoration: underline;
+    text-underline-offset: 10px;
+  }
+
+  .btn-logout-mobile i {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 480px) {
-  .btn-logout {
-    padding: 4px 8px;
-    font-size: 12px;
-  }
-
-  .btn-logout i {
-    font-size: 18px;
-  }
-
   .hamburger-btn {
-    right: 60px;
+    right: 30px;
   }
 }

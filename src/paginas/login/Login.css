@@ -77,12 +77,16 @@
     font-style: italic;
 }
 
-@media (max-width: 480px) {
-    #monograma-mobile {
-        width: 170px;
+.monograma-login {
+        width: 300px;
     }
 
-    #monograma-espacamento {
+@media (max-width: 480px) {
+    .monograma-login {
+        width: 160px;
+    }
+
+    .monograma-espacamento {
         min-height: 0;
     }
 
@@ -108,6 +112,14 @@
         font-size: 15px;
     }
 
-    
+}
 
+@media (max-width: 768px) {
+    .card-title {
+        font-size: 60px;
+    }
+
+    .monograma-login {
+        width: 200px;
+    }
 }
