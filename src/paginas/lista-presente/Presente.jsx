@@ -20,6 +20,7 @@ import Cozinha from "../../assets/cozinha.png";
 import Viagem from "../../assets/viagem.png";
 import Sala from "../../assets/sala.png";
 import Algodao from "../../assets/algodao.png";
+import Cama2 from "../../assets/jogocama2.png";
 
 function Presente() {
   const [mostrarModalReserva, setMostrarModalReserva] = useState(false);
@@ -53,10 +54,16 @@ function Presente() {
       link: "https://www.magazineluiza.com.br/forno-a-gas-embutir-infinity-50l-127v-preto-c-grill-fischer/p/jj2ggchej0/ed/frne/?partner_id=64068&utm_source=pdp&utm_medium=share",
     },
     {
-      nome: "Jogo de Cama",
+      nome: "Kit Colcha",
       imagem: Cama,
       descricao: "Para sonharmos juntinhos todas as noites.",
-      link: "https://produto.mercadolivre.com.br/MLB-3944483227#origin=share&sid=share&action=copy",
+      link: "https://www.riachuelo.com.br/produto/kit-colcha-3-pecas-design-casa-riachuelo-15024547_sku_sku_solteiro_branco",
+    },
+    {
+      nome: "Jogo de Cama Percal",
+      imagem: Cama2,
+      descricao: "Para sonharmos juntinhos todas as noites.",
+      link: "https://www.riachuelo.com.br/produto/jogo-de-cama-percal-200-fios-casa-riachuelo-14937662_sku_sku_queen_rosa-claro",
     },
     {
       nome: "Jogo de Toalhas Extra Soft",
