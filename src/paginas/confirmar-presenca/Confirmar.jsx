@@ -3,6 +3,7 @@ import Header from "../../componentes/header/Header";
 import { useState } from "react";
 import { db } from "../../firebaseConfig";
 import { collection, addDoc } from "firebase/firestore";
+import flor from "../../assets/flor-modal.png";
 
 function Confirmar({ onLogout }) {
   const [nomeConvidado, setNomeConvidado] = useState("");
@@ -103,7 +104,7 @@ function Confirmar({ onLogout }) {
       <div className="container">
         <div className="row">
           <div className="col-sm-12 col-xl-6">
-            <div className="textos-1">
+            <div className="textos-1 px-3">
               <h2>
                 Sua resposta é essencial para que tudo <br></br> fique perfeito
                 no nosso grande dia
@@ -112,7 +113,7 @@ function Confirmar({ onLogout }) {
                 Para garantir que tudo seja perfeito e que possamos recebê-lo
                 com todo o carinho e conforto que você merece, pedimos a
                 gentileza de confirmar sua presença na lista de convidados até o
-                dia <b>xx/xx/xx.</b>
+                dia <b>15/02/2026.</b>
               </p>
               <p className="mt-3 mb-5">
                 Preencha seu nome e adicione todos os acompanhantes incluídos no
@@ -198,7 +199,10 @@ function Confirmar({ onLogout }) {
       {/* Modal de Agradecimento */}
       {mostrarModal && (
         <div className="modal-overlay" onClick={fecharModal}>
-          <div className="modal-conteudo" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="modal-conteudo d-flex flex-column align-items-center"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="modal-icone">
               <i className="bi bi-check-circle-fill"></i>
             </div>
@@ -212,8 +216,9 @@ function Confirmar({ onLogout }) {
                 : `${totalConfirmados} convidados foram registrados com sucesso.`}
             </p>
             <p className="modal-mensagem">
-              Estamos ansiosos para celebrar este momento especial com você! 💚
+              Estamos ansiosos para celebrar este momento especial com você!
             </p>
+            <img className="mb-4" src={flor} alt="Flor" width={80} />
             <button className="modal-botao" onClick={fecharModal}>
               Fechar
             </button>

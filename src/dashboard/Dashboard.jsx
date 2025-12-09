@@ -12,6 +12,11 @@ function Dashboard() {
   const [carregandoPresencas, setCarregandoPresencas] = useState(true);
   const [carregandoPresentes, setCarregandoPresentes] = useState(true);
   const [erro, setErro] = useState({ presencas: "", presentes: "" });
+  
+  // Estados de paginação
+  const [paginaPresencas, setPaginaPresencas] = useState(1);
+  const [paginaPresentes, setPaginaPresentes] = useState(1);
+  const itensPorPagina = 5;
 
   // Função para buscar presenças confirmadas
   useEffect(() => {
@@ -94,14 +99,35 @@ function Dashboard() {
     });
   };
 
+  // Funções de paginação para presenças
+  const indexUltimoPresenca = paginaPresencas * itensPorPagina;
+  const indexPrimeiroPresenca = indexUltimoPresenca - itensPorPagina;
+  const presencasAtuais = presencas.slice(indexPrimeiroPresenca, indexUltimoPresenca);
+  const totalPaginasPresencas = Math.ceil(presencas.length / itensPorPagina);
+
+  // Funções de paginação para presentes
+  const indexUltimoPresente = paginaPresentes * itensPorPagina;
+  const indexPrimeiroPresente = indexUltimoPresente - itensPorPagina;
+  const presentesAtuais = presentes.slice(indexPrimeiroPresente, indexUltimoPresente);
+  const totalPaginasPresentes = Math.ceil(presentes.length / itensPorPagina);
+
+  // Funções para mudar de página
+  const mudarPaginaPresencas = (numeroPagina) => {
+    setPaginaPresencas(numeroPagina);
+  };
+
+  const mudarPaginaPresentes = (numeroPagina) => {
+    setPaginaPresentes(numeroPagina);
+  };
+
   return (
     <>
       <div className="container">
-        <div className="row mt-4 dashboard-header">
-          <div className="col-12 col-md-6 d-flex justify-content-start justify-content-md-start justify-content-center">
-            <img src={logo} id="monograma-mobile" alt="logo" width={82} />
+        <div className="row mt-4 dashboard-header align-items-center">
+          <div className="col-6 d-flex justify-content-start">
+            <img src={logo} id="monograma-mobile" alt="logo" width={60} />
           </div>
-          <div className="col-12 col-md-6 d-flex justify-content-end justify-content-md-end justify-content-center">
+          <div className="col-6 d-flex justify-content-end">
             <button className="btn botao-dashboard fw-medium" type="button">
               <a
                 className="text-decoration-none text-reset"
@@ -116,8 +142,7 @@ function Dashboard() {
           </div>
         </div>
         <div className="titulo-dashboard">
-          <h1>Olá, Milane e Lucas!</h1>
-          <img src={Flor2} alt="#" width={100} />
+          <h1 className="mb-4">Olá, Milane e Lucas!</h1>
         </div>
 
         {/* Estatísticas */}
@@ -172,24 +197,49 @@ function Dashboard() {
                     <p>Nenhuma presença confirmada ainda</p>
                   </div>
                 ) : (
-                  <table className="table table-hover">
-                    <thead>
-                      <tr>
-                        <th scope="col">Nome do Convidado</th>
-                        <th scope="col">Data de Confirmação</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {presencas.map((presenca) => (
-                        <tr key={presenca.id}>
-                          <td>{presenca.nomeConvidado}</td>
-                          <td className="data-coluna">
-                            {formatarData(presenca.dataConfirmacao)}
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                  <>
+                    <div className="table-wrapper">
+                      <table className="table table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">Nome do Convidado</th>
+                            <th scope="col">Data de Confirmação</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {presencasAtuais.map((presenca) => (
+                            <tr key={presenca.id}>
+                              <td>{presenca.nomeConvidado}</td>
+                              <td className="data-coluna">
+                                {formatarData(presenca.dataConfirmacao)}
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                    {totalPaginasPresencas > 1 && (
+                      <div className="paginacao">
+                        <button
+                          className="btn-paginacao"
+                          onClick={() => mudarPaginaPresencas(paginaPresencas - 1)}
+                          disabled={paginaPresencas === 1}
+                        >
+                          <i className="bi bi-chevron-left"></i>
+                        </button>
+                        <span className="info-paginacao">
+                          Página {paginaPresencas} de {totalPaginasPresencas}
+                        </span>
+                        <button
+                          className="btn-paginacao"
+                          onClick={() => mudarPaginaPresencas(paginaPresencas + 1)}
+                          disabled={paginaPresencas === totalPaginasPresencas}
+                        >
+                          <i className="bi bi-chevron-right"></i>
+                        </button>
+                      </div>
+                    )}
+                  </>
                 )}
               </div>
             </div>
@@ -220,26 +270,51 @@ function Dashboard() {
                     <p>Nenhum presente reservado ainda</p>
                   </div>
                 ) : (
-                  <table className="table table-hover">
-                    <thead>
-                      <tr>
-                        <th scope="col">Presente</th>
-                        <th scope="col">Reservado por</th>
-                        <th scope="col">Data</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {presentes.map((presente) => (
-                        <tr key={presente.id}>
-                          <td className="presente-nome">{presente.presente}</td>
-                          <td>{presente.nomeReservante}</td>
-                          <td className="data-coluna">
-                            {formatarData(presente.dataReserva)}
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                  <>
+                    <div className="table-wrapper">
+                      <table className="table table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">Presente</th>
+                            <th scope="col">Reservado por</th>
+                            <th scope="col">Data</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {presentesAtuais.map((presente) => (
+                            <tr key={presente.id}>
+                              <td className="presente-nome">{presente.presente}</td>
+                              <td>{presente.nomeReservante}</td>
+                              <td className="data-coluna">
+                                {formatarData(presente.dataReserva)}
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                    {totalPaginasPresentes > 1 && (
+                      <div className="paginacao">
+                        <button
+                          className="btn-paginacao"
+                          onClick={() => mudarPaginaPresentes(paginaPresentes - 1)}
+                          disabled={paginaPresentes === 1}
+                        >
+                          <i className="bi bi-chevron-left"></i>
+                        </button>
+                        <span className="info-paginacao">
+                          Página {paginaPresentes} de {totalPaginasPresentes}
+                        </span>
+                        <button
+                          className="btn-paginacao"
+                          onClick={() => mudarPaginaPresentes(paginaPresentes + 1)}
+                          disabled={paginaPresentes === totalPaginasPresentes}
+                        >
+                          <i className="bi bi-chevron-right"></i>
+                        </button>
+                      </div>
+                    )}
+                  </>
                 )}
               </div>
             </div>

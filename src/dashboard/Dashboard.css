@@ -2,8 +2,8 @@
     display: flex;
     justify-content: start;
     align-items: center;
-    margin-top: 30px;
-    margin-bottom: 40px;
+    /* margin-top: 30px;
+    margin-bottom: 40px; */
     gap: 20px;
 }
 
@@ -14,7 +14,6 @@
     font-family: var(--fonte-principal);
     color: var(--verde);
     font-style: italic;
-    font-size: 40px;
     font-weight: 900 !important;
     letter-spacing: 5px;
     margin: 0;
@@ -33,8 +32,8 @@
 
 /* Botão do Dashboard */
 .botao-dashboard {
-    background-color: var(--verde);
-    color: var(--manteiga);
+    /* background-color: var(--verde); */
+    color: var(--marrom);
     border: none;
     padding: 10px 20px;
     border-radius: 8px;
@@ -43,17 +42,7 @@
 }
 
 .botao-dashboard:hover {
-    background-color: var(--marrom);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.botao-dashboard a {
-    color: var(--manteiga);
-}
-
-.botao-dashboard:hover a {
-    color: var(--manteiga);
+    color: var(--marrom);
 }
 
 /* Cards de Estatísticas */
@@ -132,13 +121,20 @@
 .tabela-body {
     padding: 0;
     min-height: 300px;
-    max-height: 500px;
-    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Estilo da Tabela */
+.tabela-body .table-wrapper {
+    flex: 1;
+    overflow: hidden;
+}
+
 .tabela-body table {
     margin: 0;
+    width: 100%;
+    table-layout: auto;
 }
 
 .tabela-body thead {
@@ -157,6 +153,7 @@
     letter-spacing: 1px;
     padding: 15px 20px;
     border-bottom: 2px solid var(--verde);
+    white-space: nowrap;
 }
 
 .tabela-body tbody td {
@@ -165,6 +162,9 @@
     font-size: 16px;
     padding: 15px 20px;
     vertical-align: middle;
+    max-width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .tabela-body tbody tr {
@@ -215,28 +215,55 @@
     margin: 0;
 }
 
-/* Scrollbar personalizada */
-.tabela-body::-webkit-scrollbar {
-    width: 8px;
+/* Paginação */
+.paginacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-top: 2px solid #e9ecef;
 }
 
-.tabela-body::-webkit-scrollbar-track {
-    background: #f1f1f1;
+.btn-paginacao {
+    background-color: var(--verde);
+    color: var(--manteiga);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 18px;
 }
 
-.tabela-body::-webkit-scrollbar-thumb {
-    background: var(--verde);
-    border-radius: 4px;
+.btn-paginacao:hover:not(:disabled) {
+    background-color: var(--marrom);
+    transform: scale(1.1);
 }
 
-.tabela-body::-webkit-scrollbar-thumb:hover {
-    background: var(--marrom);
+.btn-paginacao:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.info-paginacao {
+    font-family: var(--fonte-secundaria);
+    color: var(--marrom);
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 120px;
+    text-align: center;
 }
 
 /* Responsividade - Tablet */
 @media (max-width: 992px) {
     .titulo-dashboard h1 {
-        font-size: 32px;
         letter-spacing: 3px;
     }
 
@@ -267,32 +294,8 @@
 @media (max-width: 768px) {
 
     /* Header */
-    .dashboard-header .row {
-        gap: 15px;
-    }
-
-    .dashboard-header .col-6 {
-        width: 100%;
-        justify-content: center !important;
-    }
-
-    .dashboard-header .col-6:first-child {
-        order: 1;
-    }
-
-    .dashboard-header .col-6:last-child {
-        order: 2;
-        margin-top: 15px;
-    }
-
     #monograma-mobile {
         width: 70px;
-    }
-
-    .botao-dashboard {
-        width: 100%;
-        padding: 12px 20px;
-        font-size: 16px;
     }
 
     /* Título */
@@ -306,7 +309,6 @@
     }
 
     .titulo-dashboard h1 {
-        font-size: 28px;
         letter-spacing: 2px;
     }
 
@@ -317,8 +319,7 @@
     /* Cards de Estatísticas */
     .card-estatistica {
         padding: 20px;
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
     }
 
     .icone-estatistica {
@@ -340,10 +341,6 @@
         font-size: 16px;
     }
 
-    .tabela-body {
-        max-height: 400px;
-    }
-
     .tabela-body thead th {
         font-size: 11px;
         padding: 12px 10px;
@@ -357,6 +354,22 @@
     .data-coluna {
         font-size: 11px;
     }
+
+    .btn-paginacao {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+
+    .info-paginacao {
+        font-size: 12px;
+        min-width: 100px;
+    }
+
+    .paginacao {
+        padding: 15px;
+        gap: 10px;
+    }
 }
 
 /* Responsividade - Mobile Pequeno */
@@ -367,14 +380,8 @@
         width: 60px;
     }
 
-    .botao-dashboard {
-        font-size: 14px;
-        padding: 10px 16px;
-    }
-
     /* Título */
     .titulo-dashboard h1 {
-        font-size: 24px;
         letter-spacing: 1px;
     }
 
@@ -412,7 +419,6 @@
 
     .tabela-body {
         min-height: 250px;
-        max-height: 350px;
     }
 
     .tabela-body thead th {
@@ -426,9 +432,25 @@
         padding: 10px 8px;
     }
 
-    /* Esconder coluna de data em mobile pequeno */
     .data-coluna {
-        display: none;
+        white-space: nowrap;
+        min-width: 100px;
+    }
+
+    .btn-paginacao {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .info-paginacao {
+        font-size: 11px;
+        min-width: 90px;
+    }
+
+    .paginacao {
+        padding: 12px;
+        gap: 8px;
     }
 
     .sem-dados i {
@@ -442,14 +464,6 @@
 
 /* Responsividade - Mobile Extra Pequeno */
 @media (max-width: 360px) {
-    .titulo-dashboard h1 {
-        font-size: 20px;
-    }
-
-    .botao-dashboard {
-        font-size: 12px;
-        padding: 8px 12px;
-    }
 
     .card-estatistica {
         padding: 12px;

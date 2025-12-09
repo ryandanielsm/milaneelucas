@@ -2,7 +2,7 @@
     background-color: #A6774E;
     color: #FFFEF1;
     /* padding: 2rem !important; */
-    width: 90% !important;
+    /* width: 90% !important; */
 }
 
 .card-title {
@@ -20,7 +20,7 @@
 
 }
 
-.btn {
+.btn-acessar {
     background-color: var(--manteiga);
     color: var(--marrom);
     border: none;
@@ -28,13 +28,10 @@
     font-size: 15px;
 }
 
-.btn:hover {
+.btn-acessar:hover {
     background-color: #D9CDBF;
-    /* tom mais escuro da cor original */
     box-shadow: 0 6px 15px rgba(217, 205, 191, 0.6);
-    /* sombra suave na cor do fundo */
     transform: translateY(-3px);
-    /* levanta um pouquinho */
     color: var(--marrom);
 }
 
@@ -71,15 +68,15 @@
     padding-top: 20px;
 }
 
-#codigoConvite::placeholder{
+#codigoConvite::placeholder {
     font-size: 15px;
     font-weight: 100;
     font-style: italic;
 }
 
 .monograma-login {
-        width: 300px;
-    }
+    width: 300px;
+}
 
 @media (max-width: 480px) {
     .monograma-login {

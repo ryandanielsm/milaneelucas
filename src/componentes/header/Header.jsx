@@ -1,4 +1,5 @@
 import { useLocation, useNavigate, Link } from "react-router-dom";
+import { useState } from "react";
 import logoBranca from "../../assets/logo-branca.PNG";
 import logoMarrom from "../../assets/logo-marrom.PNG";
 import "./Header.css";
@@ -8,6 +9,7 @@ function Header({ onLogout }) {
   const navigate = useNavigate();
 
   const isInicio = location.pathname === "/inicio";
+  const [menuAberto, setMenuAberto] = useState(false);
 
   const handleLogout = () => {
     if (onLogout) {
@@ -16,36 +18,45 @@ function Header({ onLogout }) {
     navigate("/login");
   };
 
+  const toggleMenu = () => {
+    setMenuAberto(!menuAberto);
+  };
+
   return (
     <nav
-      className={`navbar navbar-expand-md position-absolute top-0 start-0 w-100 p-0 p-xl-5 
+      className={`navbar navbar-expand-xl position-absolute top-0 start-0 w-100 p-0 p-xl-5 
       ${isInicio ? "inicio-page" : ""}`}
     >
       <div className="container-fluid justify-content-center position-relative px-0">
-        <Link className="navbar-brand position-absolute start-0 ms-3" to="/">
+        <Link
+          className="navbar-brand position-absolute start-0 top-0 mt-3 ms-3 position-xl-static m-xl-0 me-xl-5"
+          to="/"
+        >
           <img
             src={isInicio ? logoBranca : logoMarrom}
-            width={82}
+            width={80}
             alt="Logo"
-            className="logo d-none d-md-block"
+            className="logo d-none d-xl-block"
           />
 
           <img
-            src={isInicio ? logoBranca : logoMarrom}
-            width={82}
+            src={isInicio && !menuAberto ? logoBranca : logoMarrom}
+            width={60}
             alt="Logo"
-            className="logo d-block d-md-none"
+            className="logo d-block d-xl-none"
           />
         </Link>
 
         <button
-          className="hamburger-btn d-md-none"
+          className="hamburger-btn d-xl-none position-absolute end-0 me-3 border-0 bg-transparent"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbar"
           aria-controls="navbar"
           aria-expanded="false"
           aria-label="Toggle navigation"
+          style={{ top: "30px", zIndex: 1050 }}
+          onClick={toggleMenu}
         >
           <span></span>
           <span></span>
@@ -77,8 +88,11 @@ function Header({ onLogout }) {
                 LISTA DE PRESENTES
               </Link>
             </li>
-            <li className="nav-item d-md-none">
-              <button className="nav-link btn-logout-mobile" onClick={handleLogout}>
+            <li className="nav-item d-xl-none">
+              <button
+                className="nav-link btn-logout-mobile"
+                onClick={handleLogout}
+              >
                 <i className="bi bi-box-arrow-right"></i> SAIR
               </button>
             </li>
@@ -87,7 +101,7 @@ function Header({ onLogout }) {
 
         {/* Botão de Logout */}
         <button
-          className="btn-logout position-absolute end-0 me-3 d-none d-md-block"
+          className="btn-logout position-absolute end-0 me-3 d-none d-xl-block"
           onClick={handleLogout}
           title="Sair"
         >

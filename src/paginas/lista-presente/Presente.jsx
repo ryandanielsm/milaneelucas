@@ -21,6 +21,7 @@ import Viagem from "../../assets/viagem.png";
 import Sala from "../../assets/sala.png";
 import Algodao from "../../assets/algodao.png";
 import Cama2 from "../../assets/jogocama2.png";
+import flor from "../../assets/flor-modal.png";
 
 function Presente() {
   const [mostrarModalReserva, setMostrarModalReserva] = useState(false);
@@ -227,48 +228,23 @@ function Presente() {
         </p>
       </div>
 
-      {/* Grid de Presentes - Primeira linha */}
-      <div className="container">
-        <div className="card-group gap-5 p-5">
-          {presentes.slice(0, 3).map((presente, index) => (
-            <CardPresente key={index} presente={presente} />
-          ))}
-        </div>
-      </div>
-
-      {/* Grid de Presentes - Segunda linha */}
-      <div className="container">
-        <div className="card-group gap-5 p-5">
-          {presentes.slice(3, 6).map((presente, index) => (
-            <CardPresente key={index} presente={presente} />
-          ))}
-        </div>
-      </div>
-
-      {/* Grid de Presentes - Terceira linha */}
-      <div className="container">
-        <div className="card-group gap-5 p-5">
-          {presentes.slice(6, 9).map((presente, index) => (
-            <CardPresente key={index} presente={presente} />
-          ))}
-        </div>
-      </div>
-
-      {/* Grid de Presentes - Quarta linha */}
-      <div className="container">
-        <div className="card-group gap-5 p-5">
-          {presentes.slice(9, 12).map((presente, index) => (
-            <CardPresente key={index} presente={presente} />
+      {/* Grid de Presentes Unificado e Responsivo */}
+      <div className="container my-5">
+        <div className="row g-4 justify-content-center">
+          {presentes.map((presente, index) => (
+            <div key={index} className="col-6 col-md-4 col-lg-3 d-flex">
+              <CardPresente presente={presente} />
+            </div>
           ))}
         </div>
       </div>
 
       {/* Seção Mais Opções */}
       <div className="container d-flex flex-column justify-content-center align-items-center text-center ">
-        <h2 className="mais mb-4">MAIS OPÇÕES</h2>
+        <h2 className="mais my-5">MAIS OPÇÕES</h2>
         <div className="row">
-          <div className="col-12 col-md-6">
-            <p className="mais-paragrafo">
+          <div className="col-12 col-md-6 px-5">
+            <p className="mais-paragrafo mt-3">
               Se você deseja nos presentear com um apoio financeiro direto, ele
               será integralmente destinado á realização dos nossos grandes
               sonhos: a nossa viagem inesquecível e a mobília da nossa casa.
@@ -276,17 +252,13 @@ function Presente() {
               presente é um passo a mais para concretizarmos esses projetos.
             </p>
             <p className="mais-paragrafo">
-              Para nos presentear, escaneie o QR Code abaixo ou utilize a <br />
+              Para nos presentear, escaneie o QR Code na tela ou utilize a{" "}
+              <br />
               chave Pix Copia e Cola.
             </p>
           </div>
-          <div className="col-12 col-md-6">
+          <div className="col-12 col-md-6 px-5">
             {" "}
-            {/* <div className="pix mt-4 d-flex flex-column justify-content-center align-items-center text-center p-2">
-              <p>
-                071.734.945-40 <br /> Milane Gerônimo Beserra de Lima
-              </p>
-            </div> */}
             <img
               className="qrcode-imagem mb-4 mt-3"
               src={QRCODE}
@@ -294,15 +266,15 @@ function Presente() {
               width={200}
               height={200}
             />
+            <p className="mais-paragrafo fw-bold fs-4">071.734.945-40</p>
           </div>
         </div>
       </div>
 
-      {/* Seções de Cozinha, Viagem e Sala */}
       <div className="container mt-5">
         <div className="row">
-          <div className="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center text-center">
-            <h2 id="cozinha-titulo">COZINHA</h2>
+          <div className="col-12 col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center text-center px-5">
+            <h2 className="mais">COZINHA</h2>
             <p id="cozinha-paragrafo">
               Quem quiser demonstrar carinho de uma forma especial, estamos
               montando nosso lar com muito amor. Se você desejar contribuir com
@@ -310,22 +282,22 @@ function Presente() {
               amor será tempero de cada refeição, pode fazê-lo através do pix.
             </p>
           </div>
-          <div className="col-12 col-lg-6">
+          <div className="col-12 col-lg-6 order-3 order-lg-2 px-5">
             <img className="img-fluid" src={Cozinha} alt="" />
           </div>
         </div>
       </div>
       <div className="container mt-5">
         <div className="row">
-          <div className="col-12 col-lg-6">
+          <div className="col-12 col-lg-6 order-3 order-lg-1 px-5">
             <img
               className="img-sonho w-100 img-fluid"
               src={Viagem}
               alt="viagem"
             />
           </div>
-          <div className="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center text-center">
-            <h2 id="cozinha-titulo">VIAGEM</h2>
+          <div className="col-12 col-lg-6 order-2 order-lg-2 d-flex flex-column justify-content-center align-items-center text-center px-5">
+            <h2 className="mais">VIAGEM</h2>
             <p id="cozinha-paragrafo">
               Estamos ansiosos para começar nossa vida a dois celebrando o amor
               em uma viagem inesquecível. Se desejar nos presentear de uma forma
@@ -336,9 +308,9 @@ function Presente() {
         </div>
       </div>
       <div className="container mt-5">
-        <div className="row">
-          <div className="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center text-center">
-            <h2 id="cozinha-titulo">SALA</h2>
+        <div className="row mb-5">
+          <div className="col-12 col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center text-center px-5">
+            <h2 className="mais">SALA</h2>
             <p id="cozinha-paragrafo">
               Nosso lar começa a ganhar forma e aconchego com cada detalhe
               escolhido com amor. Se desejar nos presentear de uma forma
@@ -347,7 +319,7 @@ function Presente() {
               inesquecíveis juntos.{" "}
             </p>
           </div>
-          <div className="col-12 col-lg-6">
+          <div className="col-12 col-lg-6 order-3 order-lg-2 px-5">
             <img className="img-fluid" src={Sala} alt="sala" />
           </div>
         </div>
@@ -403,7 +375,10 @@ function Presente() {
       {/* Modal de Agradecimento */}
       {mostrarModalAgradecimento && (
         <div className="modal-overlay" onClick={fecharModalAgradecimento}>
-          <div className="modal-conteudo" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="modal-conteudo d-flex flex-column align-items-center"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="modal-icone">
               <i className="bi bi-gift-fill"></i>
             </div>
@@ -416,6 +391,7 @@ function Presente() {
               com sucesso.
             </p>
             <p className="modal-mensagem">Com amor, Milane e Lucas! </p>
+            <img className="mb-4" src={flor} alt="Flor" width={80} />
             <button className="modal-botao" onClick={fecharModalAgradecimento}>
               Fechar
             </button>

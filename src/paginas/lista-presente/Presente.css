@@ -1,10 +1,10 @@
 .texto-lista h1 {
-  padding-top: 150px;
+  margin-top: 170px;
   font-family: var(--fonte-principal);
   color: var(--verde);
-  font-weight: 600;
+  font-weight: 900;
   font-style: italic;
-  font-size: 80px;
+  font-size: 60px;
   letter-spacing: 5px;
 }
 
@@ -98,7 +98,7 @@
 #cozinha-paragrafo {
   font-family: var(--fonte-secundaria);
   color: var(--marrom);
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 500;
 }
 
@@ -295,7 +295,7 @@
 .modal-subtexto {
   font-family: var(--fonte-secundaria);
   color: var(--marrom);
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
   margin-bottom: 20px;
   opacity: 0.8;
@@ -305,7 +305,6 @@
   font-family: var(--fonte-secundaria);
   color: var(--verde);
   font-size: 18px;
-  font-weight: 600;
   font-style: italic;
   margin-bottom: 30px;
 }
@@ -333,24 +332,12 @@
   transform: translateY(0);
 }
 
-/* Tablet - 768px a 991px */
-@media (min-width: 768px) and (max-width: 991px) {
+/* Responsividade Consolidada */
+
+@media (max-width: 991px) {
   .texto-lista h1 {
     font-size: 50px;
-    padding-top: 120px;
-  }
-
-  .texto-lista p {
-    font-size: 18px;
-    padding: 0 20px;
-  }
-
-  .card-group {
-    padding: 20px 10px !important;
-  }
-
-  .card-presente {
-    margin: 10px;
+    margin-top: 140px;
   }
 
   .card-presente h5 {
@@ -358,52 +345,19 @@
   }
 
   .mais {
-    font-size: 45px;
-  }
-
-  .mais-paragrafo {
-    font-size: 16px;
+    font-size: 50px;
   }
 
   #cozinha-titulo {
     font-size: 40px;
-    margin-bottom: 20px;
-  }
-
-  #cozinha-paragrafo {
-    font-size: 20px;
-  }
-
-  .modal-conteudo-reserva,
-  .modal-conteudo {
-    padding: 35px 30px;
-    width: 90%;
-  }
-
-  .modal-titulo-reserva,
-  .modal-titulo {
-    font-size: 28px;
-  }
-
-  .modal-texto-reserva,
-  .modal-texto {
-    font-size: 16px;
-  }
-
-  .modal-icone {
-    font-size: 70px;
-  }
-
-  .pix {
-    font-size: 16px;
   }
 }
 
-/* Mobile - até 767px */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .texto-lista h1 {
-    font-size: 35px;
-    padding-top: 100px;
+    font-size: 40px;
+    /* Padronizado */
+    margin-top: 100px;
   }
 
   .texto-lista p {
@@ -411,24 +365,21 @@
     padding: 0 15px;
   }
 
-  .card-group {
-    padding: 20px 0 !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .card-presente {
-    margin: 10px 0;
-  }
-
+  /* Ajustes para grid de 2 colunas */
   .card-presente h5 {
-    font-size: 18px;
+    font-size: 16px;
+    margin-bottom: 8px;
   }
 
-  .mais {
-    font-size: 35px;
+  .card-presente .btn {
+    font-size: 12px;
+    padding: 6px 4px;
+  }
+
+  .card-img-top {
+    /* height: 150px; */
+    /* Ajuste opcional para manter consistência */
+    object-fit: contain;
   }
 
   .mais-paragrafo {
@@ -444,72 +395,23 @@
     font-size: 16px;
   }
 
-  .pix {
-    font-size: 14px;
-  }
-}
-
-/* Smartphone - até 480px */
-@media (max-width: 480px) {
-  .texto-lista h1 {
-    font-size: 30px;
-    font-weight: bold;
-    padding-top: 100px;
-  }
-
-  .texto-lista p {
-    font-size: 16px;
-    padding: 0 50px;
-  }
-
-  .card-group {
-    padding: 20px 0 !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
+  /* Modais */
   .modal-conteudo-reserva,
   .modal-conteudo {
-    padding: 30px 25px;
+    padding: 30px 20px;
     width: 95%;
   }
 
   .modal-titulo-reserva,
   .modal-titulo {
-    font-size: 26px;
-  }
-
-  .modal-texto-reserva,
-  .modal-texto {
-    font-size: 16px;
+    font-size: 24px;
   }
 
   .modal-icone {
     font-size: 60px;
   }
 
-  .modal-botoes {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .modal-botao-cancelar,
-  .modal-botao-confirmar {
-    width: 100%;
-    padding: 10px 20px;
-  }
-
-  .input-reserva {
-    font-size: 14px;
-    padding: 10px 15px;
-  }
-  .mais-paragrafo {
-    font-size: 13px;
-  }
   .pix {
-    font-size: 12px;
-    letter-spacing: 2px;
+    font-size: 14px;
   }
 }

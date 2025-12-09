@@ -13,7 +13,7 @@
     font-family: var(--fonte-principal);
     color: var(--verde);
     font-style: italic;
-    font-size: 80px;
+    font-size: 60px;
     font-weight: 900 !important;
     letter-spacing: 5px;
 
@@ -61,6 +61,7 @@
     padding: 0 30px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    text-align: center;
 }
 
 .paragrafo-local {
@@ -97,6 +98,12 @@
     height: 100%;
     border: 0;
     border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+    #endereco {
+        width: 75vw;
+    }
 }
 
 @media (max-width: 480px) {
@@ -142,11 +149,11 @@
         line-height: 1.4;
     }
 
-        .mapa {
-            height: 300px;
-            /* altura menor no mobile */
-            max-width: 95%;
-            /* ocupa toda a tela */
-        }
-      
+    .mapa {
+        height: 300px;
+        /* altura menor no mobile */
+        max-width: 95%;
+        /* ocupa toda a tela */
+    }
+
 }

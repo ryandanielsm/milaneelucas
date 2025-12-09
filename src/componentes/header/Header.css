@@ -2,7 +2,7 @@
 .nav-link {
   color: var(--marrom);
   font-family: var(--fonte-principal);
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
 }
 
@@ -56,9 +56,14 @@
 }
 
 /* ============================
-   DESKTOP /inicio (>=992px)
+   DESKTOP (>=1200px)
 ============================ */
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
+  .navbar-brand {
+    position: static !important;
+    margin: 0 !important;
+  }
+
   .inicio-page .nav-link {
     color: var(--manteiga);
   }
@@ -80,82 +85,15 @@
 }
 
 /* ============================
-   TABLET (768px - 991px)
+   MOBILE/TABLET (até 1199px)
 ============================ */
-@media (min-width: 768px) and (max-width: 991px) {
+@media (max-width: 1199px) {
   .navbar-collapse {
     justify-content: center !important;
-  }
-
-  .navbar-nav {
-    gap: 10px;
-    font-size: 12px;
-    margin-top: 10px;
-  }
-
-  .nav-link {
-    font-size: 16px;
-  }
-
-  .btn-logout {
-    font-size: 13px;
-    padding: 6px 10px;
-  }
-
-  .btn-logout i {
-    font-size: 14px;
-  }
-
-  .logo {
-    display: none;
-    width: 55px;
-  }
-
-  /* Configurações para página inicial em tablet */
-  .inicio-page .nav-link {
-    color: var(--manteiga);
-  }
-
-  .inicio-page .nav-link:hover {
-    color: var(--manteiga);
-  }
-
-  /* Botão logout na página inicial em tablet */
-  .inicio-page .btn-logout {
-    border-color: var(--manteiga);
-    color: var(--manteiga);
-  }
-
-  .inicio-page .btn-logout:hover {
-    background-color: var(--manteiga);
-    color: var(--verde);
-  }
-}
-
-/* ============================
-   MOBILE (até 767px)
-============================ */
-@media (max-width: 767px) {
-  .navbar-collapse {
-    justify-content: center !important;
-  }
-
-  /* Ocultar logo quando menu está aberto */
-  .container-fluid:has(.navbar-collapse.show) .navbar-brand {
-    display: none !important;
   }
 
   .navbar-brand {
     z-index: 1001;
-  }
-
-  .btn-logout {
-    font-size: 12px;
-    padding: 5px;
-  }
-
-  .btn-logout i {
-    font-size: 15px;
   }
 
   .navbar-nav {
@@ -163,37 +101,17 @@
   }
 
   .nav-link {
-    font-size: 15px;
+    font-size: 20px;
     margin-top: 10px;
-  }
-}
-
-/* ============================
-   SMARTPHONE (até 468px)
-============================ */
-@media (max-width: 468px) {
-  .logo {
-    display: none;
   }
 
   /* Botão hamburger */
   .hamburger-btn {
-    width: 32px;
+    width: 46px;
     height: 26px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: transparent;
-    border: none;
-    padding: 5px 3px 5px 3px;
-    z-index: 2000;
-    position: absolute;
-    right: 70px;
-    /* Ajustado para dar espaço ao botão de logout */
-    top: 20px;
-    background-color: var(--manteiga);
-    border-radius: 5px;
-    
   }
 
   .hamburger-btn span {
@@ -203,6 +121,16 @@
     background: var(--marrom);
     border-radius: 2px;
     transition: 0.5s ease;
+  }
+
+  /* Hamburger na página inicial - fechado */
+  .inicio-page .hamburger-btn span {
+    background: var(--manteiga);
+  }
+
+  /* Hamburger quando aberto - sempre marrom */
+  .hamburger-btn[aria-expanded="true"] span {
+    background: var(--marrom);
   }
 
   .hamburger-btn[aria-expanded="true"] span:nth-child(1) {
@@ -253,8 +181,11 @@
   }
 }
 
-@media (max-width: 480px) {
-  .hamburger-btn {
-    right: 30px;
+/* ============================
+   SMARTPHONE (até 468px)
+============================ */
+@media (max-width: 468px) {
+  .logo {
+    width: 50px;
   }
 }

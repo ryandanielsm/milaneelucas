@@ -1,37 +1,41 @@
-.carousel.slide {
-  width: 100% !important;
-  height: 300px !important;
-  max-width: 450px;
-  margin: 0 auto;
+/* Transição fade customizada para evitar piscar */
+.carousel-inner {
+  position: relative;
+  height: 400px;
+  /* Altura fixa necessária para itens absolutos */
 }
 
 .carousel-item {
-  transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out !important;
+  display: block !important;
+  /* Sobrescreve d-none do Bootstrap */
+  z-index: 0;
 }
 
 .carousel-item.active {
   opacity: 1;
-  animation: carouselFadeIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 1;
+  position: relative !important;
+  /* Mantém o fluxo para o active se necessário, ou absolute */
 }
 
-@keyframes carouselFadeIn {
-  from {
-    opacity: 0;
-    transform: rotateY(45deg) scale(0.9);
-    filter: brightness(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: rotateY(0) scale(1);
-    filter: brightness(1);
-  }
+/* Garante que a próxima imagem também fique absoluta durante a transição */
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+  display: block;
 }
 
-.carousel img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
+/* Remove transformações de slide do Bootstrap */
+.carousel-item-next,
+.carousel-item-prev {
+  transform: none !important;
 }
 
 .video-wrapper video {
@@ -46,7 +50,7 @@
   background-image: url("../../assets/fundo-floral.png");
   background-position: center;
   background-size: contain;
-  height: 450px;
+  min-height: 450px;
 }
 
 .contagem h1 {
@@ -62,27 +66,18 @@
   height: 150px;
   width: 150px;
   background-color: var(--manteiga);
-  border-radius: 10px;
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 50px 10px;
+  color: var(--marrom);
 }
 
 .card-contagem h4 {
-  font-size: 40px;
   font-family: var(--fonte-secundaria);
   font-weight: lighter;
-  color: var(--marrom);
 }
 
 .card-contagem p {
   font-family: var(--fonte-secundaria);
   font-weight: lighter;
-  color: var(--marrom);
-  font-size: 20px;
+  font-size: 12px;
 }
 
 .textos-inicio p {
@@ -104,40 +99,18 @@
   font-family: var(--fonte-principal);
   font-weight: 500;
   font-style: italic;
-  font-size: 20px;
+  /* font-size: 20px; */
   letter-spacing: 3px;
 }
 
-.row {
-  margin-top: 200px;
-  display: flex;
-  align-items: flex-start;
-}
-
-#texto-carrosel {
-  display: flex;
-  align-items: flex-start;
-  padding: 0 5px;
-  margin-top: 100px;
-}
-
-#imagem-carrosel {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 0 20px;
-  margin-bottom: 300px;
-}
-
 .nosso-ensaio {
-  margin-top: 300px;
+  margin-top: 100px;
+  /* Ajustado para espaçamento razoável */
   margin-bottom: 40px;
 }
 
 .banner-wrapper {
   position: relative;
-  /* width: 100%;
-  height: 500px; */
 }
 
 /* overlay */
@@ -145,12 +118,9 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.2) 0%,
-    /* preto bem suave no topo */ rgba(0, 0, 0, 0) 100%
-      /* transparente embaixo */
-  );
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0) 100%);
   z-index: 1;
 }
 
@@ -163,20 +133,13 @@
   }
 
   .contagem {
-    height: 300px;
-  }
-
-  .card-contagem h4 {
-    font-size: 30px;
-  }
-
-  .card-contagem p {
-    font-size: 16px;
+    min-height: 300px;
   }
 
   .card-contagem {
-    margin-top: 30px;
     width: 120px;
+    height: 120px;
+    padding: 15px;
   }
 
   .textos-inicio h2 {
@@ -187,32 +150,6 @@
     font-size: 16px;
   }
 
-  .row {
-    flex-direction: column;
-  }
-
-  #texto-carrosel {
-    order: 2;
-    margin-top: 20px;
-  }
-
-  #imagem-carrosel {
-    order: 1;
-  }
-
-  #carouselExample {
-    max-width: 450px;
-    height: 100px;
-    margin-bottom: 200px;
-  }
-
-  .row {
-    margin-top: 100px;
-  }
-
-  .nosso-ensaio {
-    margin-top: 50px;
-  }
   .memoji {
     width: 300px;
   }
@@ -220,10 +157,6 @@
   .flor-mobile {
     width: 170px;
   }
-  #imagem-carrosel {
-  
-  margin-bottom: 100px;
-}
 }
 
 /* ============================
@@ -231,33 +164,26 @@
 ============================ */
 @media (max-width: 767px) {
   .contagem h1 {
-    font-size: 18px;
+    font-size: 30px;
+    /* Aumentado para padronizar, mas menor que Cerimonia (40px) por ser texto longo */
     letter-spacing: 2px;
   }
 
-  .card-contagem h4 {
-    font-size: 18px;
-  }
-
-  .card-contagem p {
-    font-size: 8px;
-  }
-
   .card-contagem {
-    width: 60px;
-    padding: 20px 15px 30px 15px;
+    width: 80px;
+    height: 80px;
   }
 
-  #paragrafo-amor {
+  /* #paragrafo-amor {
     font-size: 12px;
-  }
+  } */
+
   .flor-mobile {
     width: 180px;
   }
 
   .textos-inicio p {
     font-size: 15px;
-    padding: 0 20px;
   }
 
   .textos-inicio h2 {
@@ -269,88 +195,23 @@
     width: 250px;
   }
 
-  #carouselExample {
-    width: 100% !important;
-    height: 350px !important;
-    max-width: 370px;
-    justify-self: center;
-  }
-
-  #texto-carrosel {
-    order: 2;
-    margin-top: 130px;
-    padding: 0 15px;
-  }
-
-  #imagem-carrosel {
-    order: 1;
-    padding: 0 15px;
-    margin: 0;
-  }
-
+  /* Ajustes específicos de vídeo e imagem se necessário */
   #video-ensaio {
-    width: 360px;
+    width: 100%;
   }
 
   .nosso-ensaio {
-    margin: 0;
-  }
-
-  #paragrafo-amor {
-    font-size: 15px;
+    margin-top: 50px;
+    margin-bottom: 20px;
   }
 
   .contagem {
-    height: 160px;
-  }
-
-  .contagem h1 {
-    font-size: 22px;
-    letter-spacing: 3px;
-    font-weight: 500;
-  }
-
-  .card-contagem {
-    height: 40px;
-    width: 70px;
-    padding: 30px 20px 40px 20px;
-    margin-top: 20px;
-  }
-
-  .card-contagem h4 {
-    font-size: 22px;
-    padding-top: 20px;
-    margin-bottom: 5px;
-  }
-
-  .card-contagem p {
-    font-size: 10px;
-    letter-spacing: 1px;
+    min-height: 160px;
   }
 
   #banner-mobile {
-    width: 100%;
     height: 500px;
     object-fit: cover;
     object-position: 35% 50%;
-    background: #2a7b9b;
-    background: linear-gradient(
-      90deg,
-      rgba(42, 123, 155, 1) 0%,
-      rgba(87, 199, 133, 1) 50%,
-      rgba(237, 221, 83, 1) 100%
-    );
   }
-
- .logo {
-  width: 50px;
-  margin-top: 60px;
- }
-
- .monograma-login {
-  width: 180px;
-  margin-bottom: 50px;
- }
 }
-
-

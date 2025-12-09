@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Header from "../../componentes/header/Header";
+import Header from "../../componentes/header/header";
 import banner from "../../assets/banner-destaque.JPG";
 import flor from "../../assets/flor-1.png";
 import memoji from "../../assets/memoji.png";
@@ -10,7 +10,6 @@ import carrosel4 from "../../assets/carrosel4.png";
 import carrosel5 from "../../assets/carrosel5.png";
 import carrosel6 from "../../assets/carrosel6.png";
 import "./Inicio.css";
-import video from "../../assets/video.mp4";
 
 function Inicio() {
   const [timeLeft, setTimeLeft] = useState({
@@ -59,60 +58,78 @@ function Inicio() {
       </div>
       <div className="contagem d-flex flex-column align-items-center justify-content-center text-center p-4">
         <h1 className="contagem-titulo">CONTAGEM REGRESSIVA</h1>
-        <div className="d-flex gap-4">
-          <div className="card-contagem">
-            <h4>{timeLeft.days}</h4>
-            <p>DIAS</p>
+        <div className="d-flex gap-4 mt-4">
+          <div className="card-contagem rounded-3 d-flex flex-column align-items-center justify-content-center">
+            <p className="fs-1 m-0">{timeLeft.days}</p>
+            <p className="m-0">DIAS</p>
           </div>
-          <div className="card-contagem">
-            <h4>{timeLeft.hours}</h4>
-            <p>HORAS</p>
+          <div className="card-contagem rounded-3 d-flex flex-column align-items-center justify-content-center">
+            <p className="fs-1 m-0">{timeLeft.hours}</p>
+            <p className="m-0">HORAS</p>
           </div>
-          <div className="card-contagem">
-            <h4>{timeLeft.minutes}</h4>
-            <p>MINUTOS</p>
+          <div className="card-contagem rounded-3 d-flex flex-column align-items-center justify-content-center">
+            <p className="fs-1 m-0">{timeLeft.minutes}</p>
+            <p className="m-0">MINUTOS</p>
           </div>
-          <div className="card-contagem">
-            <h4>{timeLeft.seconds}</h4>
-            <p>SEGUNDOS</p>
+          <div className="card-contagem rounded-3 d-flex flex-column align-items-center justify-content-center">
+            <p className="fs-1 m-0">{timeLeft.seconds}</p>
+            <p className="m-0">SEGUNDOS</p>
           </div>
         </div>
       </div>
       <div className="textos-inicio container text-center">
         <img className="m-4 flor-mobile" src={flor} alt="#" width={300} />
-        <p className="mb-4">
-          Olá! É um prazer imenso ter vocês, nossos queridos amigos e
-          familiares, por aqui.
-        </p>
-        <p className="mb-4">
-          Criamos este cantinho muito especial com todo carinho para
-          compartilhar <br />
-          um pouco da nossa história e todos os detalhes do nosso grande dia.{" "}
-          <br />
-          Estamos vibrando de felicidade e mal podemos esperar para celebrar{" "}
-          <br />o nosso amor com cada um de vocês!
-        </p>
-        <p>
-          Naveguem à vontade! Agradecemos desde já as mensagens e <br />
-          feedbacks que vocês deixarem.
-        </p>
+        <div className="p-5">
+          <p className="mb-4">
+            Olá! É um prazer imenso ter vocês, nossos queridos amigos e
+            familiares, por aqui.
+          </p>
+          <p className="mb-4">
+            Criamos este cantinho muito especial com todo carinho para
+            compartilhar <br />
+            um pouco da nossa história e todos os detalhes do nosso grande dia.{" "}
+            <br />
+            Estamos vibrando de felicidade e mal podemos esperar para celebrar{" "}
+            <br />o nosso amor com cada um de vocês!
+          </p>
+          <p>
+            Naveguem à vontade! Agradecemos desde já as mensagens e <br />
+            feedbacks que vocês deixarem.
+          </p>
+        </div>
+
         <img className="mb-1 mt-3 flor-mobile" src={flor} alt="#" width={300} />
-        <h2 className="mt-5">SOBRE NÓS</h2>
-        <img className="mt-3 mb-5 memoji" src={memoji} alt="#" width={400} />
-        <p>
-          Nos conhecemos ainda na adolescência, quando o amor era inocente, os
-          dias eram cheios de descobertas e todos os sonhos eram possíveis.
-          Tivemos um namorinho típico dessa fase de mãos dadas, trocas de
-          olhares e sonhos simples de quem estava apenas começando a entender o
-          amor. <br /> <br />
-          Vivemos a intensidade de um sentimento adolescente, a ansiedade de nos
-          ver pessoalmente e o frio na barriga para falar um com o outro. Com o
-          tempo, a vida os levou por caminhos diferentes, e cada um seguiu sua
-          jornada.
-        </p>
-        <div className="row">
-          <div className="col-sm-12 col-xl-6" id="texto-carrosel">
-            <p>
+        <div className="row align-items-stretch">
+          <div className="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center text-center">
+            <h2 className="mt-5">SOBRE NÓS</h2>
+            <img
+              className="mt-3 mb-5 memoji"
+              src={memoji}
+              alt="#"
+              width={400}
+            />
+          </div>
+
+          <div className="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center">
+            <p className="text-center p-5">
+              Nos conhecemos ainda na adolescência, quando o amor era inocente,
+              os dias eram cheios de descobertas e todos os sonhos eram
+              possíveis. Tivemos um namorinho típico dessa fase de mãos dadas,
+              trocas de olhares e sonhos simples de quem estava apenas começando
+              a entender o amor.
+              <br />
+              <br />
+              Vivemos a intensidade de um sentimento adolescente, a ansiedade de
+              nos ver pessoalmente e o frio na barriga para falar um com o
+              outro. Com o tempo, a vida nos levou por caminhos diferentes, e
+              cada um seguiu sua jornada.
+            </p>
+          </div>
+        </div>
+
+        <div className="row align-items-center my-5">
+          <div className="col-12 col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+            <p className="p-5 m-0">
               Anos depois, já mais maduros e com novas experiências, os planos
               de Deus concretizaram o nosso reencontro. Era como se o tempo
               apenas tivesse feito uma pausa, esperando o momento certo para que
@@ -124,72 +141,192 @@ function Inicio() {
               decidimos então, com a benção de Deus.
             </p>
           </div>
-          <div className="col-sm-12 col-xl-6" id="imagem-carrosel">
-            <div id="carouselExample" className="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="false">
-              <div className="carousel-inner">
-                <div className="carousel-item active">
-                  <img src={carrosel11} alt="" className="carousel-img" />
-                </div>
-                <div className="carousel-item">
-                  <img src={carrosel2} alt="" className="carousel-img" />
-                </div>
-                <div className="carousel-item">
-                  <img src={carrosel3} alt="" className="carousel-img" />
-                </div>
-                <div className="carousel-item">
-                  <img src={carrosel4} alt="" className="carousel-img" />
-                </div>
-                <div className="carousel-item">
-                  <img src={carrosel5} alt="" className="carousel-img" />
-                </div>
-                <div className="carousel-item">
-                  <img src={carrosel6} alt="" className="carousel-img" />
-                </div>
-              </div>
-              <button
-                className="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselExample"
-                data-bs-slide="prev"
-              >
-                <span
-                  className="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-                <span className="visually-hidden">Previous</span>
-              </button>
-              <button
-                className="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselExample"
-                data-bs-slide="next"
-              >
-                <span
-                  className="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span className="visually-hidden">Next</span>
-              </button>
+          <div className="col-12 col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0 d-flex justify-content-center">
+            <div
+              className="position-relative shadow rounded-4 overflow-hidden w-100"
+              style={{ maxWidth: "500px", height: "400px" }}
+            >
+              <CarrosselImagens
+                imagens={[
+                  carrosel11,
+                  carrosel2,
+                  carrosel3,
+                  carrosel4,
+                  carrosel5,
+                  carrosel6,
+                ]}
+              />
             </div>
           </div>
         </div>
-        {/* <div>
-          <h2 className="nosso-ensaio">NOSSO ENSAIO</h2>
-
-          <div className="ratio ratio-16x9 video-wrapper">
-            <video
-              src={video}
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="rounded-3"
-            />
-          </div>
-
-          <p id="paragrafo-amor">Com amor, Milane e Lucas.</p>
-        </div> */}
+        <p className="fs-2 pb-4" id="paragrafo-amor">
+          Com amor, Milane e Lucas.
+        </p>
       </div>
+    </>
+  );
+}
+
+function CarrosselImagens({ imagens }) {
+  const [indiceAtual, setIndiceAtual] = useState(0);
+  const [modalAberto, setModalAberto] = useState(false);
+  const [indiceModal, setIndiceModal] = useState(0);
+
+  useEffect(() => {
+    if (!modalAberto) {
+      const intervalo = setInterval(() => {
+        setIndiceAtual((prev) => (prev + 1) % imagens.length);
+      }, 4000);
+      return () => clearInterval(intervalo);
+    }
+  }, [imagens.length, modalAberto]);
+
+  const abrirModal = (index) => {
+    setIndiceModal(index);
+    setModalAberto(true);
+  };
+
+  const fecharModal = () => {
+    setModalAberto(false);
+  };
+
+  const proximaImagemModal = (e) => {
+    e.stopPropagation();
+    setIndiceModal((prev) => (prev + 1) % imagens.length);
+  };
+
+  const anteriorImagemModal = (e) => {
+    e.stopPropagation();
+    setIndiceModal((prev) => (prev - 1 + imagens.length) % imagens.length);
+  };
+
+  return (
+    <>
+      {imagens.map((img, index) => (
+        <img
+          key={index}
+          src={img}
+          alt={`Foto ${index + 1}`}
+          className={`d-block w-100 position-absolute top-0 start-0`}
+          style={{
+            height: "100%",
+            objectFit: "cover",
+            opacity: indiceAtual === index ? 1 : 0,
+            transition: "opacity 1.5s ease-in-out",
+            zIndex: indiceAtual === index ? 1 : 0,
+          }}
+        />
+      ))}
+      <button
+        className="position-absolute top-50 start-0 translate-middle-y btn text-white p-3"
+        style={{
+          zIndex: 2,
+          background: "transparent",
+          border: "none",
+          height: "100%",
+        }}
+        onClick={() =>
+          setIndiceAtual((prev) => (prev - 1 + imagens.length) % imagens.length)
+        }
+      >
+        <i className="bi bi-chevron-left fs-3"></i>
+      </button>
+      <button
+        className="position-absolute top-50 end-0 translate-middle-y btn text-white p-3"
+        style={{
+          zIndex: 2,
+          background: "transparent",
+          border: "none",
+          height: "100%",
+        }}
+        onClick={() => setIndiceAtual((prev) => (prev + 1) % imagens.length)}
+      >
+        <i className="bi bi-chevron-right fs-3"></i>
+      </button>
+      {/* Aviso de clique para ampliar */}
+      {/* Aviso de clique para ampliar - Agora clicável */}
+      {!modalAberto && (
+        <button
+          className="position-absolute bottom-0 end-0 m-3 px-3 py-1 rounded-pill text-white border-0"
+          onClick={() => abrirModal(indiceAtual)}
+          style={{
+            zIndex: 3,
+            backgroundColor: "rgba(0,0,0,0.6)",
+            fontSize: "0.8rem",
+            backdropFilter: "blur(2px)",
+            cursor: "pointer",
+            transition: "background-color 0.2s",
+          }}
+          onMouseOver={(e) =>
+            (e.currentTarget.style.backgroundColor = "rgba(0,0,0,0.8)")
+          }
+          onMouseOut={(e) =>
+            (e.currentTarget.style.backgroundColor = "rgba(0,0,0,0.6)")
+          }
+        >
+          <i className="bi bi-arrows-fullscreen me-2"></i>
+          Clique para ampliar
+        </button>
+      )}
+
+      {/* Modal de Visualização */}
+      {modalAberto && (
+        <div
+          className="modal fade show d-block"
+          tabIndex="-1"
+          role="dialog"
+          style={{ backgroundColor: "rgba(0,0,0,0.9)", zIndex: 9999 }}
+          onClick={fecharModal}
+        >
+          <div
+            className="modal-dialog modal-dialog-centered modal-xl position-relative"
+            role="document"
+          >
+            <div className="modal-content bg-transparent border-0">
+              <div
+                className="modal-body p-0 d-flex justify-content-center align-items-center position-relative"
+                style={{ minHeight: "80vh" }}
+              >
+                <button
+                  className="btn btn-link text-white position-absolute top-0 end-0 m-3 text-decoration-none"
+                  onClick={fecharModal}
+                  style={{ zIndex: 1050, fontSize: "2rem" }}
+                >
+                  <i className="bi bi-x-lg"></i>
+                </button>
+
+                <button
+                  className="btn btn-link text-white position-absolute start-0 ms-2"
+                  onClick={anteriorImagemModal}
+                  style={{ zIndex: 1050, fontSize: "3rem" }}
+                >
+                  <i className="bi bi-chevron-left"></i>
+                </button>
+
+                <img
+                  src={imagens[indiceModal]}
+                  alt="Visualização ampliada"
+                  className="img-fluid rounded-3 shadow-lg"
+                  style={{
+                    maxHeight: "85vh",
+                    maxWidth: "100%",
+                    objectFit: "contain",
+                  }}
+                  onClick={(e) => e.stopPropagation()}
+                />
+
+                <button
+                  className="btn btn-link text-white position-absolute end-0 me-2"
+                  onClick={proximaImagemModal}
+                  style={{ zIndex: 1050, fontSize: "3rem" }}
+                >
+                  <i className="bi bi-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

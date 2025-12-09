@@ -125,7 +125,11 @@ function AppWrapper() {
               path="/dashboard"
               element={
                 usuario ? (
-                  <Dashboard onLogout={handleLogout} />
+                  usuario.codigoAcesso === "ML150226" ? (
+                    <Dashboard onLogout={handleLogout} />
+                  ) : (
+                    <Navigate to="/inicio" />
+                  )
                 ) : (
                   <Navigate to="/login" />
                 )
