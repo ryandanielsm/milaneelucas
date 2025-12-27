@@ -65,10 +65,10 @@ function Presente() {
       nome: "Kit Colcha",
       imagem: Cama,
       descricao: "Para sonharmos juntinhos todas as noites.",
-      link: " https://www.riachuelo.com.br/kit-colcha-boutis-dupla-face-casa-riachuelo-15943275_sku_queen_rosa-claro",
+      link: "https://www.riachuelo.com.br/kit-colcha-boutis-dupla-face-casa-riachuelo-15943275_sku_sku_queen_rosa-claro",
     },
     {
-      nome: "Jogo de Cama Percal",
+      nome: "Jogo de Cama",
       imagem: Cama2,
       descricao: "Para sonharmos juntinhos todas as noites.",
       link: "https://www.riachuelo.com.br/jogo-de-cama-queen-4-pecas-maquinetado-200-fios-rosa-casa-riachuelo-15921883001_sku_sku?utm_source=app_share",
