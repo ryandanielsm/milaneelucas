@@ -138,7 +138,7 @@ function Inicio() {
               Foi então que percebemos que aquele sentimento juvenil nunca havia
               se apagado, apenas adormecido à espera do momento certo. Assim,
               nossa história teve um recomeço, depois de um lindo namoro,
-              decidimos então, com a benção de Deus.
+              decidimos então, com a benção de Deus eternizar esse reencontro com o nosso casamento.
             </p>
           </div>
           <div className="col-12 col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0 d-flex justify-content-center">

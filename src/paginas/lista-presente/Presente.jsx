@@ -19,9 +19,16 @@ import QRCODE from "../../assets/qrcode2.png";
 import Cozinha from "../../assets/cozinha.png";
 import Viagem from "../../assets/viagem.png";
 import Sala from "../../assets/sala.png";
-import Algodao from "../../assets/algodao.png";
+import Vaporizador from "../../assets/vaporizador.png";
 import Cama2 from "../../assets/jogocama2.png";
 import flor from "../../assets/flor-modal.png";
+import Purificador from "../../assets/purificadoragua.png";
+import Tacas from "../../assets/jogodetaca.png";
+import Assadeiras from "../../assets/assadeira.png";
+import Fondue from "../../assets/panelaeletrica.png";
+import Boleira from "../../assets/boleira.png";
+import Tapete from "../../assets/tapete.png";
+import Echo from "../../assets/echo.png";
 
 function Presente() {
   const [mostrarModalReserva, setMostrarModalReserva] = useState(false);
@@ -39,44 +46,44 @@ function Presente() {
       imagem: Cafeteira,
       descricao:
         "Para que nunca falte um café quentinho e boas conversas pela manhã.",
-      link: "https://produto.mercadolivre.com.br/MLB-3944483227#origin=share&sid=share&action=copy",
+      link: "https://www.magazineluiza.com.br/cafeteira-espresso-arno-nescafe-dolce-gusto-genio-s-touch-15-bar-prata/p/228576900/ep/cadc/",
     },
     {
       nome: "Batedeira",
       imagem: Batedeira,
       descricao:
         "Para misturar amor, leveza e sabor nas nossas melhores receitas.",
-      link: "https://www.amazon.com.br/Batedeira-Planet%C3%A1ria-Philco-Velocidades-Php500/dp/B07664S9YG/ref=asc_df_B07664S9YG?mcid=c3a5477f0ff83d90893673033ebe396f&tag=googleshopp00-20&linkCode=df0&hvadid=709874962041&hvpos=&hvnetw=g&hvrand=5972550658670094006&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9198255&hvtargid=pla-812124823196&psc=1&language=pt_BR&gad_source=1",
+      link: "https://www.casasbahia.com.br/batedeira-planetaria-mondial-bp-03-com-12-velocidades-e-700w-preto/p/55005430?vtr_id=produtos_patrocinados&vtr_name=produtos+patrocinados",
     },
     {
       nome: "Forno",
       imagem: Forno,
       descricao: "Para preparar juntos as receitas que aquecerão nosso lar.",
-      link: "https://www.magazineluiza.com.br/forno-a-gas-embutir-infinity-50l-127v-preto-c-grill-fischer/p/jj2ggchej0/ed/frne/?partner_id=64068&utm_source=pdp&utm_medium=share",
+      link: "https://www.ferreiracosta.com/produto/463067/forno-de-embutir-a-gas-fischer-infinity-50l-preto-127v-79710",
     },
     {
       nome: "Kit Colcha",
       imagem: Cama,
       descricao: "Para sonharmos juntinhos todas as noites.",
-      link: "https://www.riachuelo.com.br/produto/kit-colcha-3-pecas-design-casa-riachuelo-15024547_sku_sku_solteiro_branco",
+      link: " https://www.riachuelo.com.br/kit-colcha-boutis-dupla-face-casa-riachuelo-15943275_sku_queen_rosa-claro",
     },
     {
       nome: "Jogo de Cama Percal",
       imagem: Cama2,
       descricao: "Para sonharmos juntinhos todas as noites.",
-      link: "https://www.riachuelo.com.br/produto/jogo-de-cama-percal-200-fios-casa-riachuelo-14937662_sku_sku_queen_rosa-claro",
+      link: "https://www.riachuelo.com.br/jogo-de-cama-queen-4-pecas-maquinetado-200-fios-rosa-casa-riachuelo-15921883001_sku_sku?utm_source=app_share",
     },
     {
-      nome: "Jogo de Toalhas Extra Soft",
+      nome: "Jogo de Toalhas",
       imagem: Toalha,
       descricao: "Para envolver nossos dias com conforto e carinho.",
-      link: "https://www.amazon.com.br/dp/B0DWXRW4HV?ref=cm_sw_r_cso_cp_apin_dp_GMZY2YF74E918ABG3J7F&ref_=cm_sw_r_cso_cp_apin_dp_GMZY2YF74E918ABG3J7F&social_share=cm_sw_r_cso_cp_apin_dp_GMZY2YF74E918ABG3J7F&th=1",
+      link: " https://www.riachuelo.com.br/produto/kit-toalha-de-banho-2-pecas-toalha-de-rosto-2-pecas-fio-penteado-multicor-buddemeyer-KIT923003?utm_source=app_share",
     },
     {
-      nome: "Jogo de Toalhas Algodão",
-      imagem: Algodao,
+      nome: "Vaporizador de Roupas",
+      imagem: Vaporizador,
       descricao: "Para envolver nossos dias com conforto e carinho.",
-      link: "https://www.amazon.com.br/dp/B0DWXRW4HV?ref=cm_sw_r_cso_cp_apin_dp_GMZY2YF74E918ABG3J7F&ref_=cm_sw_r_cso_cp_apin_dp_GMZY2YF74E918ABG3J7F&social_share=cm_sw_r_cso_cp_apin_dp_GMZY2YF74E918ABG3J7F&th=1",
+      link: "https://m.magazineluiza.com.br/vaporizador-de-roupas-portatil-passadeira-maquina-a-vapor-steamer-3-em-1-dobravel-bdv3000v-1220w-black-decker/p/jd46d37jf6/ep/psav/?&seller_id=mmarket&utm_source=google&utm_medium=cpc&utm_term=83231&utm_campaign=google_eco_per_ven_pla_all_sor_3p_core&utm_content=&partner_id=83231&gclsrc=aw.ds&gad_source=1&gad_campaignid=23346188393&gbraid=0AAAAAD4zZmTsC2BB5EOiPFNhnSK85hpMw&gclid=CjwKCAiA3rPKBhBZEiwAhPNFQDd-LNdmqYCBQkDDl_4qGsnh2fInXFS5paDgqLauh02iO2fcdzYnXhoC3lIQAvD_BwE",
     },
     {
       nome: "Jogo de Talheres",
@@ -101,7 +108,7 @@ function Presente() {
       nome: "Televisão",
       imagem: Televisao,
       descricao: "Para compartilharmos cada história, riso e emoção.",
-      link: "https://www.ferreiracosta.com/produto/497615",
+      link: " https://m.magazineluiza.com.br/smart-tv-55-lg-4k-qned-55qned70asa-webos-25-a7-ai-processor-4k-gen8-alexa-3-hdmi-2-usb/p/240467100/et/tves/?partner_id=64853&utm_source=pdp_desk&utm_medium=share",
     },
     {
       nome: "Jogo de Jantar",
@@ -113,7 +120,7 @@ function Presente() {
       nome: "Jogo de Panelas",
       imagem: Panela,
       descricao: "Para cozinhar com amor e temperar nossos dias de alegria.",
-      link: "https://www.amazon.com.br/dp/B0BZ58KCRX?ref=cm_sw_r_cso_cp_apin_dp_4A5WTNC790RBDXH401SN&ref_=cm_sw_r_cso_cp_apin_dp_4A5WTNC790RBDXH401SN&social_share=cm_sw_r_cso_cp_apin_dp_4A5WTNC790RBDXH401SN",
+      link: " https://m.magazineluiza.com.br/jogo-de-panelas-brinox-revestimento-ceramico-de-aluminio-vanilla-5-pecas-optima/p/144134600/ud/cjpn/",
     },
     {
       nome: "Panela de Pressão Elétrica",
@@ -121,6 +128,55 @@ function Presente() {
       descricao:
         "Para que nunca falte aquele feijãozinho cheio de amor em nosso lar",
       link: "https://loja.electrolux.com.br/panela-de-pressao-eletrica-electrolux-6l-preta-experience-por-rita-lobo-/p?skuId=2001755",
+    },
+    {
+      nome: "Purificador de Água",
+      imagem: Purificador,
+      descricao:
+        "Para que nunca falte água pura, cuidado e saúde em cada novo dia juntos",
+      link: "https://www.mercadolivre.com.br/purificador-electrolux-agua-gelada-cinza-pe15x--bivolt/up/MLBU3689942060?pdp_filters=item_id%3AMLB6073148420#origin=share&sid=share&wid=MLB6073148420&action=whatsapp",
+    },
+    {
+      nome: "Jogo de Taças",
+      imagem: Tacas,
+      descricao:
+        "Para brindar o amor, as conquistas e todos os momentos especiais da nossa vida a dois.",
+      link: "https://www.mercadolivre.com.br/jogo-6-tacas-cristal-titanium-vinho-tinto-560ml-xtra-bohemia-cor-incolor-luxo-crystal-sommelier-quadrada-cristalex-jhamba/p/MLB51784026?pdp_filters=item_id%3AMLB5633645122#origin=share&sid=share&wid=MLB5633645122&action=copy",
+    },
+    {
+      nome: "Conjunto de Assadeiras",
+      imagem: Assadeiras,
+      descricao:
+        "Para preparar receitas cheias de sabor, afeto e memórias inesquecíveis",
+      link: "https://www.mercadolivre.com.br/conjunto-assadeiras-6-pecas-com-tampa-vermelha-marinex/p/MLB27411322?pdp_filters=item_id%3AMLB3463595693#origin=share&sid=share&wid=MLB3463595693&action=copy",
+    },
+    {
+      nome: "Panela Elétrica Fondue",
+      imagem: Fondue,
+      descricao:
+        "Para derreter queijos, chocolates e ainda mais o nosso amor nas noites especiais",
+      link: "https://www.mercadolivre.com.br/panela-eletrica-para-fondue-oster-onfd100-1000w-delight/p/MLB19937987?pdp_filters=item_id%3AMLB5441259362#origin=share&sid=share&wid=MLB5441259362&action=whatsapp",
+    },
+    {
+      nome: "Boleira",
+      imagem: Boleira,
+      descricao:
+        "Para guardar com carinho os doces momentos que a vida nos presentear",
+      link: "https://www.amazon.com.br/dp/B076Z41X98?ref=cm_sw_r_cso_cp_apin_dp_P1FZ5TYQTZV6DBSJ31D3&ref_=cm_sw_r_cso_cp_apin_dp_P1FZ5TYQTZV6DBSJ31D3&social_share=cm_sw_r_cso_cp_apin_dp_P1FZ5TYQTZV6DBSJ31D3&th=1",
+    },
+    {
+      nome: "Tapete Comfort",
+      imagem: Tapete,
+      descricao:
+        "Para que cada passo em nosso lar seja cheio de aconchego e conforto",
+      link: "https://www.riachuelo.com.br/produto/tapete-comfort-line-1-50-x-2-00-m-11636335001_sku_150-x-200-cm_bege?utm_source=app_share",
+    },
+    {
+      nome: "Echo Pop",
+      imagem: Echo,
+      descricao:
+        "Para nos acompanhar nas rotinas, músicas, risadas e em cada momento do nosso novo lar",
+      link: "https://www.amazon.com.br/dp/B09ZXN77L2?ref=cm_sw_r_cso_cp_apin_dp_4J7JX6KHMZ019GRE0NBH&ref_=cm_sw_r_cso_cp_apin_dp_4J7JX6KHMZ019GRE0NBH&social_share=cm_sw_r_cso_cp_apin_dp_4J7JX6KHMZ019GRE0NBH&th=1",
     },
   ];
 

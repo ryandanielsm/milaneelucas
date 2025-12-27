@@ -31,7 +31,7 @@ function Cerimonia() {
           <p>
             Contamos com a presença de todos para celebrarmos o nosso <br></br>
             amor no dia <b>14 de Março de 2026</b>, pontualmente às{" "}
-            <b>16h30.</b>
+            <b>16h00.</b>
           </p>
         </div>
         <div className="mapa-container d-flex justify-content-center mt-2 mb-5">
