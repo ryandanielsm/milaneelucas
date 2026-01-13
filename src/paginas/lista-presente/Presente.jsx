@@ -1,8 +1,8 @@
 import "./Presente.css";
 import Header from "../../componentes/header/Header";
-import { useState } from "react";
+import React, { useState } from "react";
 import { db } from "../../firebaseConfig";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, getDocs } from "firebase/firestore";
 import Cafeteira from "../../assets/cafeteira.png";
 import Batedeira from "../../assets/batedeira.png";
 import Forno from "../../assets/forno.png";
@@ -32,12 +32,27 @@ import Echo from "../../assets/echo.png";
 
 function Presente() {
   const [mostrarModalReserva, setMostrarModalReserva] = useState(false);
-  const [mostrarModalAgradecimento, setMostrarModalAgradecimento] =
-    useState(false);
+  const [mostrarModalAgradecimento, setMostrarModalAgradecimento] = useState(false);
   const [presenteSelecionado, setPresenteSelecionado] = useState("");
   const [nomeReservante, setNomeReservante] = useState("");
   const [carregando, setCarregando] = useState(false);
   const [mensagemErro, setMensagemErro] = useState("");
+  const [presentesReservados, setPresentesReservados] = useState({});
+  // Verifica presentes reservados ao carregar
+  React.useEffect(() => {
+    async function buscarReservas() {
+      const reservasSnapshot = await getDocs(collection(db, "presentes"));
+      const reservados = {};
+      reservasSnapshot.forEach(doc => {
+        const data = doc.data();
+        if (data.presente) {
+          reservados[data.presente] = true;
+        }
+      });
+      setPresentesReservados(reservados);
+    }
+    buscarReservas();
+  }, []);
 
   // Lista de presentes
   const presentes = [
@@ -265,8 +280,9 @@ function Presente() {
             className="btn botao-reservar w-100 fw-medium"
             type="button"
             onClick={() => abrirModalReserva(presente.nome)}
+            disabled={presentesReservados[presente.nome]}
           >
-            Reservar Presente <i className="bi bi-gift"></i>
+            {presentesReservados[presente.nome] ? "Presente Reservado!" : <>Reservar Presente <i className="bi bi-gift"></i></>}
           </button>
         </div>
       </div>
